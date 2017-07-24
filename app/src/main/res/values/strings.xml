@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Demo1</string>
+    <string name="name_hung">Nguyen Ngoc Hung</string>
+    <string name="secured">Secured connection</string>
+    <string name="please">Please sign in:</string>
+    <string name="hintuser">Username</string>
+    <string name="hintpass">Password</string>
+    <string name="register">Register / New User</string>
+    <string name="forgot">Forgot your password</string>
+    <string name="license"> License Agreement</string>
+    <string name="registeruser">Register</string>
+    <string name="next">NEXT</string>
+
+    <string name="fistname">Fist Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="email">Email</string>
+    <string name="phonenumber">Phone number</string>
+
+    <string name="favouvite">Favouvite colors</string>
+    <string name="country">Country</string>
+    <string name="bio">Bio</string>
+</resources>

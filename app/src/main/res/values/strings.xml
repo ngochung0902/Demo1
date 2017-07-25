@@ -15,8 +15,23 @@
     <string name="lastname">Last Name</string>
     <string name="email">Email</string>
     <string name="phonenumber">Phone number</string>
+    <string name="birdthday">Birthdday</string>
+    <string name="gender">Gender</string>
 
     <string name="favouvite">Favouvite colors</string>
     <string name="country">Country</string>
     <string name="bio">Bio</string>
+
+    <string name="s15">15dp</string>
+    <string name="s30">30dp</string>
+
+    <string name="imagenull">Image is invalid</string>
+
+    <string name="home">Home</string>
+    <string name="setting">Setting</string>
+    <string name="logout">Logout</string>
+
+    <string name="myprofile">My Profile</string>
+    <string name="save">Save</string>
+    <string name="username">Username</string>
 </resources>

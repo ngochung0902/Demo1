@@ -5,10 +5,20 @@
     android:orientation="vertical"
     android:background="#0d4d19">
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2"
         android:gravity="center">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pb_login"
+            android:max="100"
+            android:visibility="invisible" />
+
         <ImageView
             android:id="@+id/img_logotop"
             android:layout_width="wrap_content"
@@ -31,6 +41,7 @@
             android:textColor="#ffff"
             android:layout_marginTop="10dp"
             android:textSize="14dp"
+
             />
         <TextView
             android:layout_width="wrap_content"
@@ -47,7 +58,10 @@
             android:layout_height="wrap_content"
             android:hint="@string/hintuser"
             android:textColor="#ffff"
-            android:textColorHint="#ffff"/>
+            android:textColorHint="#ffff"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1"/>
 
         <EditText
             android:background="@drawable/custom_edtlogin"
@@ -59,7 +73,9 @@
             android:textColor="#ffff"
             android:textColorHint="#ffff"
             android:id="@+id/edt_password"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:imeOptions="actionDone"
+            android:maxLines="1" />
         <Button
             android:id="@+id/bt_submit"
             android:layout_width="wrap_content"

@@ -1,19 +1,20 @@
 package com.company.qts.demo1;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.company.qts.helper.QTSHelp;
 
 public class ActNewUser1 extends AppCompatActivity {
 
     Button bt_next1;
-    EditText edt_bio;
+    EditText ed_bio;
+    ImageView bt_arrow1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class ActNewUser1 extends AppCompatActivity {
         bt_next1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edt_bio.getText().toString().equals(""))
+                if (ed_bio.getText().toString().equals(""))
                 {
                     QTSHelp.ShowpopupMessage(ActNewUser1.this,"Bio is invalid !!!");
                 }
@@ -34,11 +35,18 @@ public class ActNewUser1 extends AppCompatActivity {
                 }
             }
         });
+
+        bt_arrow1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
-    @SuppressLint("WrongViewCast")
     public void initUI(){
         bt_next1 = (Button) findViewById(R.id.bt_next1);
-        edt_bio = (EditText) findViewById(R.id.edt_bio);
+        ed_bio = (EditText) findViewById(R.id.ed_bio);
+        bt_arrow1 = (ImageView)findViewById(R.id.bt_arrow1);
     }
 
 }

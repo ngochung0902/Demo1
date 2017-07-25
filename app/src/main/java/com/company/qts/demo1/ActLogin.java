@@ -1,7 +1,9 @@
 package com.company.qts.demo1;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +22,7 @@ public class ActLogin extends AppCompatActivity {
     ImageView logotop;
     Button bt_submit;
     TextView tv_register;
+    ProgressDialog myProgress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,12 +44,31 @@ public class ActLogin extends AppCompatActivity {
                     }
                     else
                     {
-                        QTSHelp.ShowpopupMessage(ActLogin.this,"Success!!!");
+                        CountDownTimer countDownTimer = new CountDownTimer(5000,1000) {
+                            @Override
+                            public void onTick(long millisUntilFinished) {
+                                myProgress = new ProgressDialog(ActLogin.this);
+                                myProgress.setTitle("Login ");
+                                myProgress.setMessage("Loading...");
+                                myProgress.setCancelable(true);
+                                myProgress.show();
+                            }
+
+                            @Override
+                            public void onFinish() {
+                                myProgress.dismiss();
+                                Intent intent = new Intent(ActLogin.this,ActHome.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        };
+                        countDownTimer.start();
                     }
 
                 }
             }
         });
+        
         tv_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +76,8 @@ public class ActLogin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
     public void initUI(){
         logotop = (ImageView) findViewById(R.id.img_logotop);
@@ -62,4 +86,6 @@ public class ActLogin extends AppCompatActivity {
         bt_submit = (Button) findViewById(R.id.bt_submit);
         tv_register = (TextView)findViewById(R.id.tv_register);
     }
+
+
 }

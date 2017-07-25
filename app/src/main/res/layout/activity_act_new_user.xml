@@ -43,7 +43,10 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:padding="10dp"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1"/>
         <EditText
             android:id="@+id/edt_lastname"
             android:layout_width="match_parent"
@@ -56,7 +59,10 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:padding="10dp"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1"/>
         <EditText
             android:id="@+id/edt_email"
             android:layout_width="match_parent"
@@ -69,7 +75,10 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:padding="10dp"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1"/>
         <EditText
             android:id="@+id/edt_username"
             android:layout_width="match_parent"
@@ -82,7 +91,10 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:padding="10dp"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1"/>
         <EditText
             android:id="@+id/edt_phonenumber"
             android:layout_width="match_parent"
@@ -96,29 +108,40 @@
             android:layout_marginRight="10dp"
             android:padding="10dp"
             android:textSize="20dp"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:imeOptions="actionNext"
+            android:maxLines="1"/>
 
-        <Spinner
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:id="@+id/sp_gender"
+            android:id="@+id/tv_birthday"
             android:background="@drawable/edt_register"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:padding="10dp"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:hint="@string/birdthday"
+            android:textColor="@color/edtRegister"
+            android:textColorHint="@color/edtRegister"
+            android:drawableRight="@drawable/ic_dropdown"/>
 
-        <Spinner
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:id="@+id/sp_birthday"
+            android:id="@+id/tv_gender"
             android:background="@drawable/edt_register"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:padding="10dp"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:hint="@string/gender"
+            android:textColor="@color/edtRegister"
+            android:textColorHint="@color/edtRegister"
+            android:drawableRight="@drawable/ic_dropdown"/>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

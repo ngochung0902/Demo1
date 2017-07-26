@@ -1,6 +1,7 @@
 package com.company.qts.demo1;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,7 +21,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.company.qts.Utili.Utility;
@@ -38,7 +38,7 @@ public class ActNewUser2 extends AppCompatActivity {
     ImageView img_avatar,bt_arrow2;
     Button bt_submit1;
     String userChoosenTask;
-    ProgressBar pb_loadhome;
+    ProgressDialog myProgress;
     private final int REQUEST_CAMERA = 0, CAPTURE_PICTURE = 1, SELECT_FILE = 2;
 
     @Override
@@ -74,19 +74,21 @@ public class ActNewUser2 extends AppCompatActivity {
                 }
                 else
                 {
-                    CountDownTimer countDownTimer = new CountDownTimer(10000, 1000) {
+                    CountDownTimer countDownTimer = new CountDownTimer(5000, 5000) {
                         @Override
                         public void onTick(long millisUntilFinished) {
-                            int dem = pb_loadhome.getProgress();
-                            if ( dem >= pb_loadhome.getMax()){
-                                dem = 0;
-                            }
-                            pb_loadhome.setProgress(dem + 20);
+                            myProgress = new ProgressDialog(ActNewUser2.this);
+                            myProgress.setTitle("Home ");
+                            myProgress.setMessage("Loading...");
+                            myProgress.setCancelable(true);
+                            myProgress.show();
                         }
                         @Override
                         public void onFinish() {
-                            this.start();
-                            loadHome();
+                            myProgress.dismiss();
+                            Intent intent = new Intent(ActNewUser2.this,ActHome.class);
+                            startActivity(intent);
+                            finish();
                         }
                     };
                     countDownTimer.start();
@@ -94,19 +96,14 @@ public class ActNewUser2 extends AppCompatActivity {
             }
 
             });
+
         }
 
-    public void loadHome(){
-        Intent intent = new Intent(ActNewUser2.this,ActHome.class);
-        startActivity(intent);
-        finish();
-    }
 
     public void initUI(){
         img_avatar = (ImageView) findViewById(R.id.img_avatar);
         bt_arrow2 = (ImageView) findViewById(R.id.bt_arrow2);
         bt_submit1 = (Button) findViewById(R.id.bt_submit1);
-        pb_loadhome = (ProgressBar) findViewById(R.id.pb_loadhome);
     }
 
     private void selectImage() {

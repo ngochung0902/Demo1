@@ -5,14 +5,8 @@ package com.company.qts.Object;
  */
 public class LineLVSetting {
     public String namesetting;
-    public int imgarrowright;
 
     public LineLVSetting() {
-    }
-
-    public LineLVSetting(String namesetting, int imgarrowright) {
-        this.namesetting = namesetting;
-        this.imgarrowright = imgarrowright;
     }
 
     public LineLVSetting(String namesetting) {
@@ -25,13 +19,5 @@ public class LineLVSetting {
 
     public void setNamesetting(String namesetting) {
         this.namesetting = namesetting;
-    }
-
-    public int getImgarrowright() {
-        return imgarrowright;
-    }
-
-    public void setImgarrowright(int imgarrowright) {
-        this.imgarrowright = imgarrowright;
     }
 }

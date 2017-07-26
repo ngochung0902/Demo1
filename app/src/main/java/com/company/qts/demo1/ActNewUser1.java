@@ -31,6 +31,7 @@ public class ActNewUser1 extends AppCompatActivity {
                 }
                 else {
                     Intent intent = new Intent(ActNewUser1.this, ActNewUser2.class);
+
                     startActivity(intent);
                 }
             }

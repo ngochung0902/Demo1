@@ -25,7 +25,8 @@
         <activity android:name=".ActNewUser2" />
         <activity android:name=".ActHome" />
         <activity android:name=".ActSetting" />
-        <activity android:name=".ActMyProfile"></activity>
+        <activity android:name=".ActMyProfile" />
+        <activity android:name=".ActBackground"></activity>
     </application>
 
 </manifest>

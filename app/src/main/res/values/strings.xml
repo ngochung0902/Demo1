@@ -28,10 +28,12 @@
     <string name="imagenull">Image is invalid</string>
 
     <string name="home">Home</string>
-    <string name="setting">Setting</string>
+    <string name="setting">Settings</string>
     <string name="logout">Logout</string>
 
     <string name="myprofile">My Profile</string>
     <string name="save">Save</string>
     <string name="username">Username</string>
+
+    <string name="background">Background</string>
 </resources>

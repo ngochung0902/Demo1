@@ -45,8 +45,9 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
         tv_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(ActSetting.this,android.R.style.Theme_DeviceDefault_Light_Dialog);
-                builder.setTitle("Logout setting");
+                AlertDialog.Builder builder = new AlertDialog.Builder(ActSetting.this);
+                builder.setIcon(R.drawable.img_error);
+                builder.setTitle("Exit logout");
                 builder.setMessage("Are you sure you want to logout?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
@@ -67,7 +68,7 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
 
     private void dataarr() {
         arrsetting.add((new LineLVSetting("My Profile")));
-        arrsetting.add((new LineLVSetting("History")));
+        arrsetting.add((new LineLVSetting("Background")));
         arrsetting.add((new LineLVSetting("Documents")));
         arrsetting.add((new LineLVSetting("My Profile")));
         arrsetting.add((new LineLVSetting("History")));
@@ -90,9 +91,12 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
             case 0:
-                Intent inten = new Intent(ActSetting.this,ActMyProfile.class);
-                startActivity(inten);
-                finish();
+                Intent intent = new Intent(ActSetting.this,ActMyProfile.class);
+                startActivity(intent);
+                break;
+            case 1:
+                Intent intent1 = new Intent(ActSetting.this,ActBackground.class);
+                startActivity(intent1);
                 break;
         }
     }

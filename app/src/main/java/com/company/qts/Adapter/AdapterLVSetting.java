@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.company.qts.Object.LineLVSetting;
@@ -49,10 +48,8 @@ public class AdapterLVSetting extends BaseAdapter {
         LineLVSetting lineLVSetting = arrayList.get(position);
 
         TextView tv_namesetting = (TextView) convertView.findViewById(R.id.tv_namesetting);
-        ImageView img = (ImageView) convertView.findViewById(R.id.img_line);
 
         tv_namesetting.setText(lineLVSetting.getNamesetting());
-        img.setImageResource(lineLVSetting.getImgarrowright());
         return convertView;
     }
     }

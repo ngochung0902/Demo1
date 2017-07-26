@@ -56,14 +56,6 @@
                 android:background="@drawable/im_avatar"
                 android:layout_marginTop="15dp"/>
 
-            <ProgressBar
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="276dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/pb_loadhome"
-                android:layout_gravity="center_horizontal"
-                android:max="200" />
-
         </LinearLayout>
     </LinearLayout>
     <LinearLayout

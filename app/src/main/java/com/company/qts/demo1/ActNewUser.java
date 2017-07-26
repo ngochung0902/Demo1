@@ -22,7 +22,7 @@ import java.util.Locale;
 public class ActNewUser extends AppCompatActivity {
 
     Button bt_next;
-    EditText edt_fistname,edt_lastname,edt_email,edt_username,edt_phonenumber;
+    EditText edt_fistname,edt_lastname,edt_email,edt_rs_username,edt_phonenumber,edt_rs_password;
     TextView tv_birthday,tv_gender;
     ImageView bt_arrow;
 
@@ -52,7 +52,7 @@ public class ActNewUser extends AppCompatActivity {
                     }
                     else
                     {
-                        if (edt_email.getText().toString().equals(""))
+                        if (edt_email.getText().toString().equals(""))//||QTSHelp.checkEmailCorrect(edt_email.getText().toString())==false)
                         {
                             QTSHelp.ShowpopupMessage(ActNewUser.this,"Email is invalid !!!");
                         }
@@ -69,7 +69,7 @@ public class ActNewUser extends AppCompatActivity {
                                 }
                                 else
                                 {
-                                    if (edt_username.getText().toString().trim().length()==0){
+                                    if (edt_rs_username.getText().toString().trim().length()==0){
                                         QTSHelp.ShowpopupMessage(ActNewUser.this,"Username is invalid !!!");
                                     }
                                     else {
@@ -78,13 +78,12 @@ public class ActNewUser extends AppCompatActivity {
                                         }
                                         else {
                                             if (edt_email.getText().toString().trim().length()>0) {
+                                                String rs_us = edt_rs_username.getText().toString();
+                                                QTSHelp.setUsername(ActNewUser.this,rs_us);
+                                                String rs_ps = edt_rs_password.getText().toString();
+                                                QTSHelp.setPassword(ActNewUser.this,rs_ps);
                                                 Intent intent = new Intent(ActNewUser.this, ActNewUser1.class);
                                                 startActivity(intent);
-                                                Intent intent1 = new Intent(ActNewUser.this,ActMyProfile.class);
-                                                intent1.putExtra("username",edt_username.getText().toString());
-                                                intent1.putExtra("phonenumber",edt_phonenumber.getText().toString());
-//                                                startActivity(intent1);
-
                                         }
                                     }
                                 }
@@ -124,7 +123,8 @@ public class ActNewUser extends AppCompatActivity {
         edt_fistname = (EditText) findViewById(R.id.edt_fistname);
         edt_lastname = (EditText) findViewById(R.id.edt_lastname);
         edt_email = (EditText) findViewById(R.id.edt_email);
-        edt_username = (EditText) findViewById(R.id.edt_username);
+        edt_rs_username = (EditText) findViewById(R.id.edt_rs_username);
+        edt_rs_password = (EditText) findViewById(R.id.edt_rs_password);
         edt_phonenumber = (EditText) findViewById(R.id.edt_phonenumber);
         tv_gender = (TextView) findViewById(R.id.tv_gender);
         tv_birthday = (TextView) findViewById(R.id.tv_birthday);

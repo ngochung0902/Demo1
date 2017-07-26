@@ -33,10 +33,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <ImageView
             android:layout_margin="15dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:background="@drawable/user" />
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,14 +46,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:textSize="20dp"
                 android:text="Username"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical"
+                android:layout_marginRight="10dp"/>
             <EditText
                 android:id="@+id/edt_mp_username"
                 android:textSize="20dp"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>
         <LinearLayout
@@ -62,12 +63,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:textSize="20dp"
-                android:text="Phonenumber"
-                android:gravity="left|center" />
+                android:text="@string/hintpass"
+                android:gravity="left|center"
+                android:layout_marginRight="10dp"/>
             <EditText
-                android:id="@+id/edt_mp_phonenumber"
+                android:id="@+id/edt_mp_password"
                 android:textSize="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

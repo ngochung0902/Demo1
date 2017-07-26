@@ -9,12 +9,16 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
+
+import com.company.qts.demo1.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -256,5 +260,76 @@ public class QTSHelp {
         cursor.moveToFirst();
         return cursor.getInt(0);
     }
-
+// Set and get username
+    public static void setUsername(Context context, String username) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(
+                QTSConstrains.SHAREPRE_ID, 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("Username", username);
+        editor.commit();
+    }
+    public static String getUsername(Context context) {
+        int mode = Activity.MODE_PRIVATE;
+        SharedPreferences sharedPreferences = context.getSharedPreferences(
+                QTSConstrains.SHAREPRE_ID, mode);
+        return sharedPreferences.getString("Username", "Not found");
+    }
+    //Set and get password
+    public static void setPassword(Context context, String password) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(
+                QTSConstrains.SHAREPRE_ID, 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("Password", password);
+        editor.commit();
+    }
+    public static String getPassword(Context context) {
+        int mode = Activity.MODE_PRIVATE;
+        SharedPreferences sharedPreferences = context.getSharedPreferences(
+                QTSConstrains.SHAREPRE_ID, mode);
+        return sharedPreferences.getString("Password", "Not found");
+    }
+    // Check INTERNET connection
+    public static boolean isNetworkAvailable(Context context) {
+        ConnectivityManager connectivity = (ConnectivityManager) context
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivity != null) {
+            NetworkInfo[] info = connectivity.getAllNetworkInfo();
+            if (info != null) {
+                for (int i = 0; i < info.length; i++) {
+                    if (info[i].getState() == NetworkInfo.State.CONNECTED) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    //set and get color
+    public static void setColor(Context context, int color) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(
+                QTSConstrains.SHAREPRE_ID, 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("Color", color);
+        editor.commit();
+    }
+    public static int getColor(Context context) {
+        int mode = Activity.MODE_PRIVATE;
+        SharedPreferences sharedPreferences = context.getSharedPreferences(
+                QTSConstrains.SHAREPRE_ID, mode);
+        return sharedPreferences.getInt("Color", R.color.edtRegister);
+    }
+//    public static int Getnum(Context context) {
+//        int mode = Activity.MODE_PRIVATE;
+//        SharedPreferences sharedPreferences = context.getSharedPreferences(
+//                LakConst.PREFERENCES, mode);
+//        return sharedPreferences.getInt("numrate", 0);
+//    }
+//
+//    public static void Setnum(Context context, int num) {
+//        SharedPreferences sharedPreferences = context.getSharedPreferences(
+//                LakConst.PREFERENCES, 0);
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
+//        editor.putInt("numrate", num);
+//        editor.commit();
+//    }
 }

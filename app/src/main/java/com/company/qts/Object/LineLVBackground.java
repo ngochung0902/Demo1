@@ -20,6 +20,11 @@ public class LineLVBackground {
         this.img_check = img_check;
     }
 
+    public LineLVBackground(String namecolor, int img_colorview) {
+        this.namecolor = namecolor;
+        this.img_colorview = img_colorview;
+    }
+
     public int getImg_check() {
         return img_check;
     }

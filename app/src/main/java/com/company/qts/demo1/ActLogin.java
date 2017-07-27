@@ -25,6 +25,7 @@ public class ActLogin extends AppCompatActivity {
     Button bt_submit;
     TextView tv_register;
     ProgressDialog myProgress;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,8 +139,4 @@ public class ActLogin extends AppCompatActivity {
         bt_submit = (Button) findViewById(R.id.bt_submit);
         tv_register = (TextView)findViewById(R.id.tv_register);
     }
-    public void onclickSubmit(){
-
-    }
-
 }

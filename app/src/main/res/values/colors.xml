@@ -5,5 +5,11 @@
     <color name="colorAccent">#FF4081</color>
     <color name="edtRegister">#03280c</color>
     <color name="blue">#0000FF</color>
-
+    <color name="red">#FFDF1B14</color>
+    <color name="gray">#BEBEBE</color>
+    <color name="green">#006400</color>
+    <color name="black">#0e0e0e</color>
+    <color name="cyan">#E0FFFF</color>
+    <color name="dkgray">#698B69</color>
+    <color name="yellow">#f4ec11</color>
 </resources>

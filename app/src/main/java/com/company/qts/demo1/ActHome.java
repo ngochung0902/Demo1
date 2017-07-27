@@ -18,8 +18,6 @@ public class ActHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_home);
 
-
-
         initUI();
 
         img_sthome.setOnClickListener(new View.OnClickListener() {
@@ -30,11 +28,17 @@ public class ActHome extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        ln_home.setBackgroundColor(QTSHelp.getColor(this));
+       // ln_home.setBackgroundColor(QTSHelp.getColor(this));
     }
 
     public void initUI(){
         img_sthome = (ImageView) findViewById(R.id.img_sthome);
         ln_home = (LinearLayout) findViewById(R.id.ln_home);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ln_home.setBackgroundColor(QTSHelp.getColor(this));
     }
 }

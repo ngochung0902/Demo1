@@ -63,18 +63,20 @@ public class ActLogin extends AppCompatActivity {
                                 myProgress.setTitle("Login ");
                                 myProgress.setMessage("Loading...");
                                 myProgress.setCancelable(true);
+                                QTSHelp.hideKeyboard(ActLogin.this);
                                 myProgress.show();
                             }
 
                             @Override
                             public void onFinish() {
-                                myProgress.dismiss();
+                                hideProgressDialog();
                                 String us = edt_username.getText().toString();
                                 QTSHelp.setUsername(ActLogin.this,us);
                                 String password = edt_password.getText().toString();
                                 QTSHelp.setPassword(ActLogin.this,password);
                                 Intent intent = new Intent(ActLogin.this,ActHome.class);
                                 startActivity(intent);
+                                QTSHelp.setIsLogin(ActLogin.this,true);
                                 finish();
                             }
                         };
@@ -87,8 +89,11 @@ public class ActLogin extends AppCompatActivity {
         edt_password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                boolean handled = false;
+                boolean handled = true;
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
+
+                    QTSHelp.hideKeyboard(ActLogin.this);
+
                     if (edt_username.getText().toString().equals(""))
                     {
                         QTSHelp.ShowpopupMessage(ActLogin.this,"Username or password is invalid !!!");
@@ -104,20 +109,21 @@ public class ActLogin extends AppCompatActivity {
                                 @Override
                                 public void onTick(long millisUntilFinished) {
                                     myProgress = new ProgressDialog(ActLogin.this);
-                                    myProgress.setTitle("Login ");
+                                    myProgress.setTitle("Demo1");
                                     myProgress.setMessage("Loading...");
                                     myProgress.setCancelable(true);
                                     myProgress.show();
                                 }
                                 @Override
                                 public void onFinish() {
-                                    myProgress.dismiss();
+                                    hideProgressDialog();
                                     String us = edt_username.getText().toString();
                                     QTSHelp.setUsername(ActLogin.this,us);
                                     String password = edt_password.getText().toString();
                                     QTSHelp.setPassword(ActLogin.this,password);
                                     Intent intent = new Intent(ActLogin.this,ActHome.class);
                                     startActivity(intent);
+                                    QTSHelp.setIsLogin(ActLogin.this,true);
                                     finish();
                                 }
                             };
@@ -138,5 +144,11 @@ public class ActLogin extends AppCompatActivity {
         edt_username = (EditText) findViewById(R.id.edt_username);
         bt_submit = (Button) findViewById(R.id.bt_submit);
         tv_register = (TextView)findViewById(R.id.tv_register);
+    }
+
+    private void hideProgressDialog() {
+        if (myProgress != null && myProgress.isShowing()) {
+            myProgress.hide();
+        }
     }
 }

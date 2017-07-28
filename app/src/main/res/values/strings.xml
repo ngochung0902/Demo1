@@ -36,4 +36,6 @@
     <string name="username">Username</string>
 
     <string name="background">Background</string>
+    <string name="back">Back</string>
+    <string name="documents">Documents</string>
 </resources>

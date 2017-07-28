@@ -89,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center|top">
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -100,7 +100,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:textSize="20dp"
-                android:checked="true" />
+                android:checked="true"
+                android:button="@drawable/customradiobutton"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -111,7 +112,8 @@
                 android:layout_marginRight="10dp"
                 android:textSize="20dp"
                 android:text="Other"
-                android:checked="false" />
+                android:checked="false"
+                android:button="@drawable/customradiobutton"/>
         </RadioGroup>
         <TextView
             android:layout_width="match_parent"
@@ -119,7 +121,7 @@
             android:text="@string/bio"
             android:textColor="@color/edtRegister"
             android:background="@drawable/edt_register"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:padding="10dp"
             android:textSize="20dp"/>
         <EditText

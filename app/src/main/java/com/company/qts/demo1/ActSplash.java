@@ -12,8 +12,10 @@ import com.company.qts.helper.QTSConstrains;
 import com.company.qts.helper.QTSHelp;
 
 public class ActSplash extends AppCompatActivity {
+
     private ImageView im_logo;
     private TextView tv_name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +30,18 @@ public class ActSplash extends AppCompatActivity {
                 try {
                     synchronized (this) {
                         // Wait given period of time or exit on touch
-
-                        wait(QTSConstrains.Splash_Time);
-                        Intent intent = new Intent(ActSplash.this,ActLogin.class);
-                        startActivity(intent);
-                        finish();
+                        if(QTSHelp.getIsLogin(ActSplash.this)) {
+                            wait(QTSConstrains.Splash_Time);
+                            Intent intent = new Intent(ActSplash.this, ActHome.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                        else {
+                            wait(QTSConstrains.Splash_Time);
+                            Intent intent = new Intent(ActSplash.this, ActLogin.class);
+                            startActivity(intent);
+                            finish();
+                        }
                     }
                 } catch (InterruptedException ex) {
 

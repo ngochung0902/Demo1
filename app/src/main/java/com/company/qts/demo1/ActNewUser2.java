@@ -70,7 +70,10 @@ public class ActNewUser2 extends AppCompatActivity {
             public void onClick(View v) {
                 if(QTSConstrains.bmAvatar == null)
                 {
-                    QTSHelp.ShowpopupMessage(ActNewUser2.this,"Image is invalid !!!");
+//                    QTSHelp.ShowpopupMessage(ActNewUser2.this,"Image is invalid !!!");
+                    Intent intent = new Intent(ActNewUser2.this, ActLogin.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
                 }
                 else
                 {
@@ -85,7 +88,7 @@ public class ActNewUser2 extends AppCompatActivity {
                         }
                         @Override
                         public void onFinish() {
-                            myProgress.dismiss();
+                            hideProgressDialog();
                             Intent intent = new Intent(ActNewUser2.this,ActHome.class);
                             startActivity(intent);
                             finish();
@@ -319,6 +322,12 @@ public class ActNewUser2 extends AppCompatActivity {
             e.printStackTrace();
         }
         return file;
+    }
+
+    private void hideProgressDialog() {
+        if (myProgress != null && myProgress.isShowing()) {
+            myProgress.hide();
+        }
     }
 
 }

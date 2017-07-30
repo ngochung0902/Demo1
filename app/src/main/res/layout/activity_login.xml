@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0d4d19">
+    android:background="#116320">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -25,101 +25,107 @@
             android:layout_height="wrap_content"
             android:background="@drawable/ic_logo"/>
     </LinearLayout>
+
     <LinearLayout
-        android:gravity="center"
-        android:background="@drawable/linear_custom"
-        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/linear_custom"
+        android:gravity="center"
         android:orientation="vertical">
+
         <TextView
-            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:drawableLeft="@drawable/ic_lock"
+            android:gravity="center"
             android:text="@string/secured"
             android:textColor="#ffff"
-            android:layout_marginTop="10dp"
             android:textSize="14dp"
 
             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/please"
             android:layout_margin="10dp"
-            android:textSize="18dp"
-            android:textColor="#ffff"/>
-        <EditText
-            android:id="@+id/edt_username"
-            android:background="@drawable/custom_edtlogin"
-            android:padding="7dp"
-            android:layout_width="287dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/hintuser"
+            android:text="@string/please"
             android:textColor="#ffff"
-            android:textColorHint="#ffff"
-            android:imeOptions="actionNext"
-            android:inputType="text"
-            android:maxLines="1"/>
+            android:textSize="18dp" />
 
         <EditText
-            android:background="@drawable/custom_edtlogin"
-            android:padding="7dp"
-            android:layout_marginTop="15dp"
+            android:id="@+id/edt_username"
             android:layout_width="287dp"
             android:layout_height="wrap_content"
-            android:hint="@string/hintpass"
+            android:background="@drawable/custom_edtlogin"
+            android:hint="@string/hintuser"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="7dp"
             android:textColor="#ffff"
-            android:textColorHint="#ffff"
+            android:textColorHint="#ffff" />
+
+        <EditText
             android:id="@+id/edt_password"
-            android:inputType="textPassword"
+            android:layout_width="287dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom_edtlogin"
+            android:hint="@string/hintpass"
             android:imeOptions="actionDone"
-            android:maxLines="1" />
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:padding="7dp"
+            android:textColor="#ffff"
+            android:textColorHint="#ffff" />
+
         <Button
             android:id="@+id/bt_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/custom_edtlogin"
             android:layout_marginTop="15dp"
-            android:textColor="#054515"
+            android:background="@drawable/custom_edtlogin"
             android:text="submit"
-            />
+            android:textColor="#054515" />
+
         <ImageView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/line_login"
+            android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:background="@drawable/line_login" />
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <ImageView
-                android:layout_margin="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/imageButton"
-                android:background="@drawable/btn_fb"/>
-
-            <ImageView
-                android:layout_margin="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn_fb" />
+
+            <ImageView
                 android:id="@+id/imageButton2"
-                android:background="@drawable/btn_ig"/>
-
-            <ImageView
-                android:layout_margin="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn_ig" />
+
+            <ImageView
                 android:id="@+id/imageButton3"
-                android:background="@drawable/btn_gplus"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn_gplus" />
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:layout_weight="2"
         android:layout_width="match_parent"

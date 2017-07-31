@@ -96,8 +96,8 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
         arrsetting.add((new LineLVSetting("My Profile")));
         arrsetting.add((new LineLVSetting("Background")));
         arrsetting.add((new LineLVSetting("Documents")));
-        arrsetting.add((new LineLVSetting("My Profile")));
         arrsetting.add((new LineLVSetting("History")));
+        arrsetting.add((new LineLVSetting("Custom Profile")));
         arrsetting.add((new LineLVSetting("Documents")));
         arrsetting.add((new LineLVSetting("My Profile")));
         arrsetting.add((new LineLVSetting("History")));
@@ -128,6 +128,14 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
             case 2:
                 Intent intent2 = new Intent(ActSetting.this,ActDocuments.class);
                 startActivity(intent2);
+                break;
+            case 3:
+                Intent intent3 = new Intent(ActSetting.this,ActHistory.class);
+                startActivity(intent3);
+                break;
+            case 4:
+                Intent intent4 = new Intent(ActSetting.this,ActCustomProfile.class);
+                startActivity(intent4);
                 break;
         }
     }

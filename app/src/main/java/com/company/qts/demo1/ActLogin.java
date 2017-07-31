@@ -85,7 +85,6 @@ public class ActLogin extends AppCompatActivity {
                 }
             }
         });
-
         edt_password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {

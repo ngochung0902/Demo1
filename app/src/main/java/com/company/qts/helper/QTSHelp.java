@@ -374,4 +374,18 @@ public class QTSHelp {
                 QTSConstrains.SHAREPRE_ID, mode);
         return sharedPreferences.getInt("Color", -1);
     }
+    //set and get num
+    public static void setNum(Context context, int number) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(
+                QTSConstrains.SHAREPRE_ID, 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("number", number);
+        editor.commit();
+    }
+    public static int getNum(Context context) {
+        int mode = Activity.MODE_PRIVATE;
+        SharedPreferences sharedPreferences = context.getSharedPreferences(
+                QTSConstrains.SHAREPRE_ID, mode);
+        return sharedPreferences.getInt("number", -1);
+    }
 }

@@ -5,8 +5,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
@@ -35,7 +35,14 @@
             android:name=".ActLongClickGV"
             android:theme="@android:style/Theme.Holo.Dialog" />
         <activity android:name=".ActHistory" />
-        <activity android:name=".ActCustomProfile"></activity>
+        <activity android:name=".ActCustomProfile" />
+        <activity android:name=".ActBranchs" />
+        <activity
+            android:name=".ActLongClickLV"
+            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar" />
+        <activity android:name=".ActonClickLV" />
+        <activity android:name=".ActTabHost" />
+        <activity android:name=".ActStory"></activity>
     </application>
 
 </manifest>

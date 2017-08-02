@@ -2,9 +2,11 @@ package com.company.qts.demo1;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -15,13 +17,16 @@ public class ActHome extends AppCompatActivity {
 
     ImageView img_sthome;
     LinearLayout ln_home;
+    private Button bt_quangnam,bt_hue,bt_danang,bt_other;
+    private String[]name;
+    private int myNum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_home);
 
         initUI();
-
+        name = new String[]{"Trung Quoc","Viet Nam","Lao","Nhat Ban","Thai Lan","Nga","My","Trieu Tien","An Do","Anh","Phap","Campuchia","Duc","Singapo","Philipin","Dongtimo","Mong Co","Han Quoc","Bugari","Nam Phi","Ha Lan","Cannada"};
         img_sthome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,16 +35,48 @@ public class ActHome extends AppCompatActivity {
                 startActivityForResult(intent,5);
             }
         });
+
+        bt_quangnam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActHome.this,ActQuangNam.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.abc_slide_in_bottom, R.anim.abc_slide_out_bottom);
+            }
+        });
+
+        bt_danang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String uri = "https://www.google.com/maps/@16.0559665,108.2116037,13.5z?hl=en-US";
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri));
+                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                startActivity(intent);
+            }
+        });
+
+        bt_other.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActHome.this,ActOther.class);
+                startActivityForResult(intent,3);
+            }
+        });
     }
 
     public void initUI(){
+        bt_other = (Button) findViewById(R.id.bt_other);
+        bt_danang = (Button) findViewById(R.id.bt_danang);
+        bt_quangnam = (Button) findViewById(R.id.bt_quangnam);
         img_sthome = (ImageView) findViewById(R.id.img_sthome);
         ln_home = (LinearLayout) findViewById(R.id.ln_home);
+        bt_hue = (Button) findViewById(R.id.bt_hue);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        super.onStop();
         ln_home.setBackgroundColor(QTSHelp.getColor(this));
     }
 
@@ -56,5 +93,28 @@ public class ActHome extends AppCompatActivity {
             } else {
             }
         }
+        if (requestCode ==3){
+            if (resultCode == Activity.RESULT_OK){
+                final String result1 = data.getStringExtra(ActSetting.EXTRA_DATA);
+                myNum = Integer.parseInt(result1);
+                bt_other.setText(name[myNum]);
+
+            }
+        }
     }
+
+    public void goToSo (View view) {
+        goToUrl ( "https://www.thuathienhue.gov.vn/vi-vn/");
+    }
+
+    public void goToSu (View view) {
+        goToUrl ( "http://superuser.com/");
+    }
+
+    private void goToUrl (String url) {
+        Uri uriUrl = Uri.parse(url);
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+        startActivity(launchBrowser);
+    }
+
 }

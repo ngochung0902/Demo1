@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.company.qts.demo1.ActOther">
+    <EditText
+
+        android:layout_marginTop="5dp"
+        android:id="@+id/edt_seach"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_edtlogin"
+        android:hint="Seach"
+        android:drawableLeft="@drawable/ic_seach"
+        android:drawablePadding="10dp"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="#ffff"
+        android:textColorHint="#ffff" />
+    <ListView
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_other"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+</LinearLayout>

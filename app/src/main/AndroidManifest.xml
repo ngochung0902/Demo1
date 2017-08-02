@@ -42,7 +42,10 @@
             android:theme="@android:style/Theme.Holo.Dialog.NoActionBar" />
         <activity android:name=".ActonClickLV" />
         <activity android:name=".ActTabHost" />
-        <activity android:name=".ActStory"></activity>
+        <activity android:name=".ActStory" />
+        <activity android:name=".ActQuangNam" />
+        <activity android:name=".ActOther" />
+        <activity android:name=".SingleItemView"></activity>
     </application>
 
 </manifest>

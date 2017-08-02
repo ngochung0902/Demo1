@@ -15,7 +15,7 @@
             android:layout_gravity="center"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/img_arrow"/>
+            android:background="@drawable/customarrowback"/>
         <TextView
             android:layout_weight="1"
             android:gravity="center"

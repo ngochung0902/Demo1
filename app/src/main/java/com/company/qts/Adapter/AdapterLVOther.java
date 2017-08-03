@@ -23,6 +23,8 @@ public class AdapterLVOther extends BaseAdapter {
     LayoutInflater inflater;
     private List<Other> worldpopulationlist = null;
     private ArrayList<Other> arraylist;
+    private int startPos;
+    private int endPos;
 
     public AdapterLVOther(Context context, List<Other> worldpopulationlist) {
         mContext = context;
@@ -64,25 +66,23 @@ public class AdapterLVOther extends BaseAdapter {
         }
         // Set the results into TextViews
         holder.tv_lineother.setText(worldpopulationlist.get(position).getName());
-        // Listen for ListView Item Click
-//        view.setOnClickListener(new View.OnClickListener() {
+
+//        String country = item.getCountry().toLowerCase(Locale.getDefault());
+//        if (country.contains(searchString)) {
+//            Log.e("test", country + " contains: " + searchString);
+//            int startPos = country.indexOf(searchString);
+//            int endPos = startPos + searchString.length();
 //
-//            @Override
-//            public void onClick(View arg0) {
-//                // Send single item click data to SingleItemView Class
-//                Intent intent = new Intent(mContext, SingleItemView.class);
-//                // Pass all data rank
-//                intent.putExtra("rank",(worldpopulationlist.get(position).getName()));
-//                // Pass all data flag
-//                // Start SingleItemView Class
-//                mContext.startActivity(intent);
-//            }
-//        });
+//            Spannable spanText = Spannable.Factory.getInstance().newSpannable(holder.country.getText()); // <- EDITED: Use the original string, as `country` has been converted to lowercase.
+//            spanText.setSpan(new ForegroundColorSpan(Color.RED), startPos, endPos, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 //
+//            holder.country.setText(spanText, TextView.BufferType.SPANNABLE);
+//    }
         return view;
     }
     // Filter Class
     public void filter(String charText) {
+        final ViewHolder holder =null;
         charText = charText.toLowerCase(Locale.getDefault());
         worldpopulationlist.clear();
         if (charText.length() == 0) {

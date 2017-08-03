@@ -15,7 +15,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActSplash">
+        <activity android:name=".ActContacts">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,7 +45,10 @@
         <activity android:name=".ActStory" />
         <activity android:name=".ActQuangNam" />
         <activity android:name=".ActOther" />
-        <activity android:name=".SingleItemView"></activity>
+        <activity android:name=".SingleItemView" />
+        <activity android:name=".ActSplash" />
+        <activity android:name=".ActNewContacts" />
+        <activity android:name=".ActViewContacts"></activity>
     </application>
 
 </manifest>

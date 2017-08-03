@@ -17,7 +17,7 @@ public class ActHome extends AppCompatActivity {
 
     ImageView img_sthome;
     LinearLayout ln_home;
-    private Button bt_quangnam,bt_hue,bt_danang,bt_other;
+    private Button bt_quangnam,bt_hue,bt_danang,bt_other,bt_contacst;
     private String[]name;
     private int myNum;
     @Override
@@ -65,6 +65,7 @@ public class ActHome extends AppCompatActivity {
     }
 
     public void initUI(){
+        bt_contacst = (Button) findViewById(R.id.bt_contacst);
         bt_other = (Button) findViewById(R.id.bt_other);
         bt_danang = (Button) findViewById(R.id.bt_danang);
         bt_quangnam = (Button) findViewById(R.id.bt_quangnam);
@@ -101,6 +102,13 @@ public class ActHome extends AppCompatActivity {
 
             }
         }
+        bt_contacst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActHome.this,ActContacts.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void goToSo (View view) {

@@ -50,23 +50,33 @@
                 android:layout_weight="1"
                 android:gravity="center">
                 <Button
+                    android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/bt_contacst"
                     android:background="@drawable/customdn"
                     android:text="Contacts"/>
-            </LinearLayout>
-            <LinearLayout
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-                <ImageButton
-                    android:background="@drawable/custombth2"
+
+                <Button
+                    android:layout_margin="10dp"
+                    android:id="@+id/bt_other"
+                    android:text="other"
+                    android:textColor="#ffff"
+                    android:background="@drawable/customdn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <Button
+                    android:layout_margin="10dp"
+                    android:id="@+id/bt_quangnam"
+                    android:background="@drawable/customdn"
+                    android:text="Quang Nam"
+                    android:textColor="#ffff"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -106,38 +116,27 @@
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-            <LinearLayout
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-                <Button
-                    android:id="@+id/bt_quangnam"
-                    android:background="@drawable/customdn"
-                    android:text="Quang Nam"
-                    android:textColor="#ffff"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-            <LinearLayout
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-                <Button
-                    android:id="@+id/bt_other"
-                    android:text="other"
-                    android:textColor="#ffff"
-                    android:background="@drawable/customdn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
+            android:layout_weight="1"
+            android:gravity="center">
+            <Button
+                android:id="@+id/bt_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test APi get"
+                android:layout_margin="10dp"
+                android:background="@drawable/custombtsave"
+                />
+            <Button
+                android:id="@+id/bt_test2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test APi post"
+                android:drawablePadding="10dp"
+                android:background="@drawable/custombtsave"
+                />
         </LinearLayout>
     </LinearLayout>
 

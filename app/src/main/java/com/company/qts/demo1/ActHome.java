@@ -11,15 +11,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.company.qts.APIGET.ActMain;
 import com.company.qts.helper.QTSHelp;
 
 public class ActHome extends AppCompatActivity {
 
     ImageView img_sthome;
     LinearLayout ln_home;
-    private Button bt_quangnam,bt_hue,bt_danang,bt_other,bt_contacst;
+    private Button bt_quangnam,bt_hue,bt_danang,bt_other,bt_contacst,bt_test;
     private String[]name;
     private int myNum;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +64,14 @@ public class ActHome extends AppCompatActivity {
                 startActivityForResult(intent,3);
             }
         });
+
+        //--------------------------------------------------------------------
+//        AsyncTaskDownload asyncTaskDownload = new AsyncTaskDownload();
+//        asyncTaskDownload.SetLister(ActHome.this);
+//        asyncTaskDownload.execute("https://api.coinsecure.in/v1/login");
+//        //https://api.myjson.com/bins/4z4r4
+        //---------------------------------------------------------------------
+
     }
 
     public void initUI(){
@@ -72,6 +82,7 @@ public class ActHome extends AppCompatActivity {
         img_sthome = (ImageView) findViewById(R.id.img_sthome);
         ln_home = (LinearLayout) findViewById(R.id.ln_home);
         bt_hue = (Button) findViewById(R.id.bt_hue);
+        bt_test = (Button) findViewById(R.id.bt_test);
     }
 
     @Override
@@ -109,14 +120,17 @@ public class ActHome extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        bt_test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActHome.this, ActMain.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void goToSo (View view) {
         goToUrl ( "https://www.thuathienhue.gov.vn/vi-vn/");
-    }
-
-    public void goToSu (View view) {
-        goToUrl ( "http://superuser.com/");
     }
 
     private void goToUrl (String url) {
@@ -125,4 +139,30 @@ public class ActHome extends AppCompatActivity {
         startActivity(launchBrowser);
     }
 
+//    @Override
+//    public void OnFinisheDownload(String result) {
+//        Log.i("hehe", result);
+//        ParseJson(result);
+//    }
+
+//    public void ParseJson(String jsonString) {
+//        try {
+//
+////            JSONObject jsonRootObject = new JSONObject(jsonString);
+////            JSONArray jsonArray = jsonRootObject.optJSONArray("Weather");
+////            for (int i=0; i < jsonArray.length(); i++) {
+////                JSONObject jsonObject = jsonArray.getJSONObject(i);
+////                String tv_city = jsonObject.optString("cityName");
+////                String tv_thoitiet = jsonObject.optString("weather");
+////                String tv_nhietdo = jsonObject.optString("temperature");
+////                String imgtt = jsonObject.optString("icon");
+////
+////                tv_1.setText(jsonRootObject.getString("success"));
+//            }
+//
+////        }
+//        catch (Exception e){
+//            e.printStackTrace();
+//        }
+//    }
 }

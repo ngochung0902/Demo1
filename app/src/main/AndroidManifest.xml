@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.company.qts.demo1">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -51,8 +52,11 @@
         <activity android:name=".ActViewContacts" />
         <activity android:name="com.company.qts.APIGET.PostDetailActivity" />
         <activity android:name="com.company.qts.APIGET.ActMain" />
-        <activity android:name="com.company.qts.APIPOST.LoginActivity"></activity>
-        <activity android:name="com.company.qts.APIPOST.MainAct"></activity>
+        <activity android:name="com.company.qts.APIPOST.LoginActivity" />
+        <activity android:name="com.company.qts.APIPOST.MainAct" />
+        <activity android:name="com.company.qts.HEI.ActHEILogin" />
+        <activity android:name="com.company.qts.HEI.ActHEISplash" />
+        <activity android:name="com.company.qts.HEI.ActHEISpirits"></activity>
     </application>
 
 </manifest>

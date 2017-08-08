@@ -1,23 +1,31 @@
 package com.company.qts.demo1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.company.qts.Adapter.AdapterViewpager;
+import com.company.qts.HEI.ActHEISplash;
 
 public class ActStory extends AppCompatActivity {
 
     private ViewPager vpg_story;
     private ImageView img_arrow,ic_circleoff1,ic_circleoff2,ic_circleoff3,img_back,img_next;
+    private Button bt_HEILogin;
+    private LinearLayout ln;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_story);
         initUI();
+        ln.setVisibility(View.GONE);
+        bt_HEILogin.setVisibility(View.GONE);
         img_back.setVisibility(View.INVISIBLE);
         img_next.setVisibility(View.VISIBLE);
         img_next.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +94,9 @@ public class ActStory extends AppCompatActivity {
                             vpg_story.setCurrentItem(1);
                         }
                     });
+
+                    ln.setVisibility(View.GONE);
+                    bt_HEILogin.setVisibility(View.GONE);
                 }
                 if (position==1){
                     img_back.setVisibility(View.VISIBLE);
@@ -105,6 +116,9 @@ public class ActStory extends AppCompatActivity {
                             vpg_story.setCurrentItem(2);
                         }
                     });
+
+                    ln.setVisibility(View.GONE);
+                    bt_HEILogin.setVisibility(View.GONE);
                 }
                 if (position==2){
                     img_back.setVisibility(View.VISIBLE);
@@ -118,12 +132,23 @@ public class ActStory extends AppCompatActivity {
                             vpg_story.setCurrentItem(1);
                         }
                     });
+
+                    ln.setVisibility(View.VISIBLE);
+                    bt_HEILogin.setVisibility(View.VISIBLE);
                 }
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
 
+            }
+        });
+
+        bt_HEILogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActStory.this,ActHEISplash.class);
+                startActivity(intent);
             }
         });
     }
@@ -136,5 +161,7 @@ public class ActStory extends AppCompatActivity {
         ic_circleoff1 = (ImageView) findViewById(R.id.ic_circleoff1);
         ic_circleoff2 = (ImageView) findViewById(R.id.ic_circleoff2);
         ic_circleoff3 = (ImageView) findViewById(R.id.ic_circleoff3);
+        bt_HEILogin = (Button) findViewById(R.id.bt_loginHEI);
+        ln = (LinearLayout) findViewById(R.id.ln);
     }
 }

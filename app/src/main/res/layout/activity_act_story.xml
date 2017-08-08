@@ -46,12 +46,33 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2">
-            <android.support.v4.view.ViewPager
+            android:layout_weight="2"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <android.support.v4.view.ViewPager
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/vpg_story">
+                </android.support.v4.view.ViewPager>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ln"
+                android:layout_weight="10"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/vpg_story">
-            </android.support.v4.view.ViewPager>
+                android:gravity="center">
+                <Button
+                    android:id="@+id/bt_loginHEI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    />
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_weight="8"

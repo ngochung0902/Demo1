@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/hei_img_login"
+    android:gravity="center"
+    >
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:padding="5dp"
+        android:textSize="16dp"
+        android:hint="EMAIL ADDRESS"
+        android:textColor="@color/text_color"
+        android:layout_margin="10dp"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:layout_marginTop="5dp"
+        android:id="@+id/edt_email"
+        android:background="@drawable/hei_img_edtlogin"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:padding="5dp"
+        android:textSize="16dp"
+        android:hint="PASSWORD"
+        android:textColor="@color/text_color"
+        android:layout_margin="10dp"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:layout_marginTop="5dp"
+        android:id="@+id/edt_password"
+        android:background="@drawable/hei_img_edtlogin"/>
+    <Button
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/hei_img_btsingin"
+        android:textSize="16dp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:text="sign in"
+        android:id="@+id/bt_signin"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"/>
+</LinearLayout>

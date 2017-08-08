@@ -11,14 +11,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.company.qts.APIGET.ActMain;
+//import com.company.qts.APIGET.ActMain;
+import com.company.qts.APIPOST.LoginActivity;
 import com.company.qts.helper.QTSHelp;
 
 public class ActHome extends AppCompatActivity {
 
     ImageView img_sthome;
     LinearLayout ln_home;
-    private Button bt_quangnam,bt_hue,bt_danang,bt_other,bt_contacst,bt_test;
+    private Button bt_quangnam,bt_hue,bt_danang,bt_other,bt_contacst,bt_test,bt_test2;
     private String[]name;
     private int myNum;
 
@@ -83,6 +84,7 @@ public class ActHome extends AppCompatActivity {
         ln_home = (LinearLayout) findViewById(R.id.ln_home);
         bt_hue = (Button) findViewById(R.id.bt_hue);
         bt_test = (Button) findViewById(R.id.bt_test);
+        bt_test2 = (Button) findViewById(R.id.bt_test2);
     }
 
     @Override
@@ -123,7 +125,14 @@ public class ActHome extends AppCompatActivity {
         bt_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActHome.this, ActMain.class);
+//                Intent intent = new Intent(ActHome.this, ActMain.class);
+//                startActivity(intent);
+            }
+        });
+        bt_test2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActHome.this, LoginActivity.class);
                 startActivity(intent);
             }
         });

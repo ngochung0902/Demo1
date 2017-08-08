@@ -1,7 +1,9 @@
 package com.company.qts.APIGET;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -21,10 +23,11 @@ import retrofit2.Response;
 /**
  * Created by MyPC on 04/08/2017.
  */
-public class ActMain extends AppCompatActivity implements View.OnClickListener {
+public class ActMain extends AppCompatActivity{
     private Button mJsonArray, mJsonObject;
     private ListView mLvPost;
     private PostAdapter postAdapter;
+    ProgressDialog myProgress;
 
     private APIService mAPIService;
     @Override
@@ -32,6 +35,52 @@ public class ActMain extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.apitest);
         initView();
+
+        mJsonArray.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CountDownTimer countDownTimer = new CountDownTimer(5000,5000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        myProgress = new ProgressDialog(ActMain.this);
+                        myProgress.setTitle("Login ");
+                        myProgress.setMessage("Loading...");
+                        myProgress.setIndeterminate(true);
+                        showProgressDialog();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        showProgressDialog();
+                        getJsonRetrofitArray();
+                    }
+                };
+                countDownTimer.start();
+            }
+        });
+
+        mJsonObject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CountDownTimer countDownTimer = new CountDownTimer(3000,3000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        myProgress = new ProgressDialog(ActMain.this);
+                        myProgress.setTitle("Login ");
+                        myProgress.setMessage("Loading...");
+                        myProgress.setCancelable(true);
+                        myProgress.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        getJsonRetrofitObject();
+                        hideProgressDialog();
+                    }
+                };
+                countDownTimer.start();
+            }
+        });
     }
 
     private void initView() {
@@ -40,8 +89,6 @@ public class ActMain extends AppCompatActivity implements View.OnClickListener {
         mLvPost = (ListView) findViewById(R.id.lvPost);
         mAPIService = ApiUtils.getAPIService();
 
-        mJsonArray.setOnClickListener(this);
-        mJsonObject.setOnClickListener(this);
     }
     private void getJsonRetrofitArray() {
         mAPIService.getPostsDetails().enqueue(new Callback<List<Post>>() {
@@ -68,7 +115,6 @@ public class ActMain extends AppCompatActivity implements View.OnClickListener {
                     e.printStackTrace();
                 }
             }
-
             @Override
             public void onFailure(Call<List<Post>> call, Throwable t) {
                 Log.d("onFailure", t.toString());
@@ -109,15 +155,21 @@ public class ActMain extends AppCompatActivity implements View.OnClickListener {
         });
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.jsonArray:
-                getJsonRetrofitArray();
-                break;
-            case R.id.jsonObject:
-                getJsonRetrofitObject();
-                break;
+
+    private void hideProgressDialog() {
+        if (myProgress != null && myProgress.isShowing()) {
+            myProgress.hide();
+        }
+    }
+
+    private void showProgressDialog() {
+        if (myProgress == null) {
+            myProgress = new ProgressDialog(this);
+            myProgress.setMessage("Loading...");
+            myProgress.setIndeterminate(true);
+            myProgress.show();
+        }else {
+            myProgress.show();
         }
     }
 }

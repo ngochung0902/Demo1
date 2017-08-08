@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -14,13 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.company.qts.APIGET.APIService;
-import com.company.qts.APIGET.LoginCredentials;
 import com.company.qts.helper.QTSHelp;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * Created by MyPC on 24/07/2017.
@@ -32,13 +25,14 @@ public class ActLogin extends AppCompatActivity {
     Button bt_submit;
     TextView tv_register;
     ProgressDialog myProgress;
-    private APIService mAPIService;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initUI();
+
 
         QTSHelp.setLayoutView(logotop,QTSHelp.GetWidthDevice(this)/2,QTSHelp.GetHeightDevice(this)/405*103/4);
 
@@ -90,18 +84,7 @@ public class ActLogin extends AppCompatActivity {
                                 //--------------------------------------------------------------------------------------------------
                                 String user = edt_username.getText().toString();
                                 String pass = edt_password.getText().toString();
-                                mAPIService.login(user,pass).enqueue(new Callback<LoginCredentials>() {
-                                    @Override
-                                    public void onResponse(Call<LoginCredentials> call, Response<LoginCredentials> response) {
-                                        Intent intent = new Intent(ActLogin.this, ActHome.class);
-                                        startActivity(intent);
-                                    }
 
-                                    @Override
-                                    public void onFailure(Call<LoginCredentials> call, Throwable t) {
-                                        Log.e("error", "points not loaded");
-                                    }
-                                });
                                 //----------------------------------------------------------------------------------------------------
                             }
                         };
@@ -175,4 +158,5 @@ public class ActLogin extends AppCompatActivity {
             myProgress.hide();
         }
     }
+
 }

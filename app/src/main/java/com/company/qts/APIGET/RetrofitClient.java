@@ -18,4 +18,13 @@ public class RetrofitClient {
         }
         return retrofit;
     }
+
+//    private APIService getInterfaceService() {
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl(BASE_URL)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//        final APIService mInterfaceService = retrofit.create(APIService.class);
+//        return mInterfaceService;
+//    }
 }

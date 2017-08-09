@@ -56,7 +56,9 @@
         <activity android:name="com.company.qts.APIPOST.MainAct" />
         <activity android:name="com.company.qts.HEI.ActHEILogin" />
         <activity android:name="com.company.qts.HEI.ActHEISplash" />
-        <activity android:name="com.company.qts.HEI.ActHEISpirits"></activity>
+        <activity android:name="com.company.qts.HEI.ActHEISpirits" />
+        <activity android:name="com.company.qts.HEI.ActHEIDrink" />
+        <activity android:name="com.company.qts.HEI.ActHEIInfo"></activity>
     </application>
 
 </manifest>

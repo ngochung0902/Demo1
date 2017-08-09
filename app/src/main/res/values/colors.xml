@@ -13,4 +13,6 @@
     <color name="dkgray">#698B69</color>
     <color name="yellow">#f4ec11</color>
     <color name="text_color">#636363</color>
+    <color name="blue_light">#0a92d8</color>
+    <color name="white">#ffffff</color>
 </resources>

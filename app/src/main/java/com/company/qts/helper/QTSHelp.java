@@ -38,6 +38,15 @@ public class QTSHelp {
 
     private static final float MAX_IMAGE_DIMENSION = 1280;
 
+    //check internet
+    public static boolean checkInternet(Context context){
+        if (context == null) {
+            return false;
+        }
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
     //show Toast
     public static void showToast(Context context, String str_message) {
         Toast toast = Toast.makeText(context, str_message, Toast.LENGTH_SHORT);
@@ -407,5 +416,15 @@ public class QTSHelp {
             e1.printStackTrace();
         }
         return password;
+    }
+
+    private static boolean isValidEmaillId(String email){
+
+        return Pattern.compile("^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                + "((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                + "([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                + "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$").matcher(email).matches();
     }
 }

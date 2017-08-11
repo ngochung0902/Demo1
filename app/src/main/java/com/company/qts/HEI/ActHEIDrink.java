@@ -82,6 +82,12 @@ public class ActHEIDrink extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 new SearchTask().execute(s.toString().trim().toLowerCase());
+//                System.out.println("Text ["+s+"] - Start ["+start+"] - Before ["+before+"] - Count ["+count+"]");
+//                if (count < before) {
+//                    // We're deleting char so we need to reset the adapter data
+//                    adapter.resetData();
+//                }
+//                adapter.getFilter().filter(s.toString());
             }
 
             @Override
@@ -93,14 +99,15 @@ public class ActHEIDrink extends AppCompatActivity {
         lv_drink.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                QTSHelp.showToast(ActHEIDrink.this,adapter.getItem(position).toString());
-                String a = arrlist.get(position).getImage();
-                String b = arrlist.get(position).getName().toString();
-                String c = arrlist.get(position).getDescription().toString();
-                String e = arrlist.get(position).getId().toString();
+                Drink drink = (Drink) adapter.getItem(position);
+                String h = drink.getId();
+                QTSHelp.showToast(ActHEIDrink.this,""+h);
+                String b = drink.getName().toString();
+                String c = drink.getDescription().toString();
+                String e = drink.getId().toString();
                 int f = position;
                 String d = idspirits;
+                String a = drink.getImage().toString();
                 Intent i = new Intent(ActHEIDrink.this,ActHEIInfo.class);
                 i.putExtra("name",b);
                 i.putExtra("img",a);
@@ -109,7 +116,6 @@ public class ActHEIDrink extends AppCompatActivity {
                 i.putExtra("position",f);
                 i.putExtra("idmixologits",e);
                 startActivity(i);
-
             }
         });
     }

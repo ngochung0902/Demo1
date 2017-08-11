@@ -101,9 +101,9 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
         arrsetting.add((new LineLVSetting("Custom Profile")));
         arrsetting.add((new LineLVSetting("Branchs")));
         arrsetting.add((new LineLVSetting("Story")));
-        arrsetting.add((new LineLVSetting("TabHost")));
-        arrsetting.add((new LineLVSetting("Documents")));
-        arrsetting.add((new LineLVSetting("My Profile")));
+        arrsetting.add((new LineLVSetting("Picasso")));
+        arrsetting.add((new LineLVSetting("Serializable")));
+        arrsetting.add((new LineLVSetting("Fragment")));
         arrsetting.add((new LineLVSetting("History")));
         arrsetting.add((new LineLVSetting("Documents")));
     }
@@ -147,8 +147,16 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
                 startActivity(intent6);
                 break;
             case 7:
-                Intent intent7 = new Intent(ActSetting.this,ActTabHost.class);
+                Intent intent7 = new Intent(ActSetting.this,ActPicasso.class);
                 startActivity(intent7);
+                break;
+            case 8:
+                Intent intent8 = new Intent(ActSetting.this,ActSerializable.class);
+                startActivity(intent8);
+                break;
+            case 9:
+                Intent intent9 = new Intent(ActSetting.this,ActFragment.class);
+                startActivity(intent9);
                 break;
         }
     }

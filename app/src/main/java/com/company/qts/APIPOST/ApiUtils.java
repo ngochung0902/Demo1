@@ -1,4 +1,4 @@
-package com.company.qts.APIPOST;
+package com.company.qts.apipost;
 
 /**
  * Created by MyPC on 08/08/2017.

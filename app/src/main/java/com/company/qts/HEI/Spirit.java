@@ -1,4 +1,4 @@
-package com.company.qts.HEI;
+package com.company.qts.hei;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.company.qts.Database.SQLiteSource;
+import com.company.qts.database.SQLiteSource;
 import com.company.qts.helper.QTSHelp;
 
 import java.text.SimpleDateFormat;

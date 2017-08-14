@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.company.qts.demo1.ActShowFrm">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:name="com.company.qts.fragment.FrmTop"
+        android:id="@+id/frm_top"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"/>
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:name="com.company.qts.fragment.FrmBottom"
+        android:id="@+id/frm_bottom"
+        android:layout_below="@+id/frm_top"
+        android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:id="@+id/bt_next"
+        android:layout_below="@+id/frm_bottom"
+        android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:id="@+id/bt_next1"
+        android:layout_alignTop="@+id/bt_next"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

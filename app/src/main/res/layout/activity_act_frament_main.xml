@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActFragmentMain">
+    <LinearLayout
+        android:gravity="center"
+        android:background="#d1c8c7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/relativeLayout">
+        <Button
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#42e664"
+            android:text="frament 1"
+            android:id="@+id/bt_frm1"
+            android:background="@drawable/custom_btfrm"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#42e664"
+            android:text="frament 2"
+            android:id="@+id/bt_frm2"
+            android:background="@drawable/custom_btfrm"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_alignTop="@+id/bt_frm1"
+            android:layout_centerHorizontal="true" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#42e664"
+            android:text="frament 3"
+            android:id="@+id/bt_frm3"
+            android:background="@drawable/custom_btfrm"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_alignTop="@+id/bt_frm1"
+            android:layout_alignParentEnd="true" />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="right"
+        android:layout_gravity="right"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentStart="true"
+        android:id="@+id/ln2">
+        <Button
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#42e664"
+            android:text="apply"
+            android:id="@+id/bt_apply"
+            android:background="@drawable/custom_btfrm"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentEnd="true" />
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/frlo"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true">
+        <fragment
+            android:id="@+id/frm1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="com.company.qts.fragment.Frm1">
+        </fragment>
+        <fragment
+            android:id="@+id/frm2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="com.company.qts.fragment.Frm2">
+        </fragment>
+        <fragment
+            android:id="@+id/frm3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="com.company.qts.fragment.Frm3">
+        </fragment>
+    </FrameLayout>
+</LinearLayout>

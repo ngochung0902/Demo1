@@ -3,7 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_light"
-    tools:context="com.company.qts.fragment.Frm1">
-
+    android:background="@color/dkgray"
+    tools:context="com.company.qts.fragment.Frm2">
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@android:id/list">
+    </ListView>
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.company.qts.Object;
+package com.company.qts.object;
 
 import java.io.Serializable;
 

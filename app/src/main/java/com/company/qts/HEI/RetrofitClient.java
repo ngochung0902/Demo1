@@ -1,4 +1,4 @@
-package com.company.qts.HEI;
+package com.company.qts.hei;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

@@ -14,8 +14,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.company.qts.Adapter.AdapterLVOther;
-import com.company.qts.Object.Other;
+import com.company.qts.adapter.AdapterLVOther;
+import com.company.qts.object.Other;
 import com.company.qts.helper.QTSHelp;
 
 import java.util.ArrayList;

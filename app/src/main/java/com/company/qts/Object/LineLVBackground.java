@@ -1,4 +1,4 @@
-package com.company.qts.Object;
+package com.company.qts.object;
 
 /**
  * Created by MyPC on 26/07/2017.

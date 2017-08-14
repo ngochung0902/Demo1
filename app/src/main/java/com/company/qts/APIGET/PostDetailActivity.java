@@ -1,4 +1,4 @@
-package com.company.qts.APIGET;
+package com.company.qts.apiget;
 
 import android.graphics.Color;
 import android.os.Bundle;

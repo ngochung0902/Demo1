@@ -8,8 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.company.qts.Adapter.AdapterBranchs;
-import com.company.qts.Object.Branchs;
+import com.company.qts.adapter.AdapterBranchs;
+import com.company.qts.object.Branchs;
 
 import java.util.ArrayList;
 

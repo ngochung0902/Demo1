@@ -11,9 +11,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.company.qts.Adapter.AdapterContacts;
-import com.company.qts.Database.SQLiteSource;
-import com.company.qts.Object.Contacts;
+import com.company.qts.adapter.AdapterContacts;
+import com.company.qts.database.SQLiteSource;
+import com.company.qts.object.Contacts;
 
 import java.util.ArrayList;
 

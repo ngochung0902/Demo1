@@ -1,4 +1,4 @@
-package com.company.qts.APIPOST;
+package com.company.qts.apipost;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

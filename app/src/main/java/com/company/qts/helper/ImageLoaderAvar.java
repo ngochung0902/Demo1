@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.widget.ImageView;
 
-import com.company.qts.Utili.Utility;
+import com.company.qts.utili.Utility;
 
 import java.io.File;
 import java.io.FileInputStream;

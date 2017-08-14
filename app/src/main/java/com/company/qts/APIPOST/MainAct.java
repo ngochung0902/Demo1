@@ -1,4 +1,4 @@
-package com.company.qts.APIPOST;
+package com.company.qts.apipost;
 
 import android.content.Intent;
 import android.os.Bundle;

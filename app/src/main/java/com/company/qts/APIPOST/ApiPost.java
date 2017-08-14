@@ -1,6 +1,6 @@
-package com.company.qts.APIPOST;
+package com.company.qts.apipost;
 
-import com.company.qts.APIGET.Post;
+import com.company.qts.apiget.Post;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

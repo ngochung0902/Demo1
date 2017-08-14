@@ -1,4 +1,4 @@
-package com.company.qts.APIPOST;
+package com.company.qts.apipost;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

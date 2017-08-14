@@ -15,7 +15,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.company.qts.Object.LineGv;
+import com.company.qts.object.LineGv;
 
 import java.util.ArrayList;
 

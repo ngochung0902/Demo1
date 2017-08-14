@@ -1,4 +1,4 @@
-package com.company.qts.HEI;
+package com.company.qts.hei;
 
 import android.app.ProgressDialog;
 import android.content.Intent;

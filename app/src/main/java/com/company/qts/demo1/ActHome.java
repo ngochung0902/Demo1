@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 //import com.company.qts.APIGET.ActMain;
-import com.company.qts.APIPOST.LoginActivity;
+import com.company.qts.apipost.LoginActivity;
 import com.company.qts.helper.QTSHelp;
 
 public class ActHome extends AppCompatActivity {

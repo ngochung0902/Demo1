@@ -23,7 +23,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.company.qts.Utili.Utility;
+import com.company.qts.utili.Utility;
 import com.company.qts.helper.QTSConstrains;
 import com.company.qts.helper.QTSHelp;
 

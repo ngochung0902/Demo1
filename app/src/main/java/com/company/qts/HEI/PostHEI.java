@@ -1,6 +1,6 @@
-package com.company.qts.HEI;
+package com.company.qts.hei;
 
-import com.company.qts.APIPOST.User;
+import com.company.qts.apipost.User;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

@@ -1,4 +1,4 @@
-package com.company.qts.Database;
+package com.company.qts.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
-import com.company.qts.Object.Contacts;
+import com.company.qts.object.Contacts;
 
 import java.util.ArrayList;
 

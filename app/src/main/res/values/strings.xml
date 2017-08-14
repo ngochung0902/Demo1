@@ -51,4 +51,5 @@
     <string name="Story2">Story2</string>
     <string name="Story3">Story3</string>
 
+    <string name="description_format">%1$s\n\n%2$s</string>
 </resources>

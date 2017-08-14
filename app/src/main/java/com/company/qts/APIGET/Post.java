@@ -1,4 +1,4 @@
-package com.company.qts.APIGET;
+package com.company.qts.apiget;
 
 /**
  * Created by MyPC on 04/08/2017.

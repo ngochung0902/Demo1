@@ -12,8 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.company.qts.Database.SQLite;
-import com.company.qts.Database.SQLiteSource;
+import com.company.qts.database.SQLite;
+import com.company.qts.database.SQLiteSource;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

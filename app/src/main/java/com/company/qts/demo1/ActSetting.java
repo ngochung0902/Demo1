@@ -13,8 +13,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.company.qts.Adapter.AdapterLVSetting;
-import com.company.qts.Object.LineLVSetting;
+import com.company.qts.adapter.AdapterLVSetting;
+import com.company.qts.object.LineLVSetting;
 import com.company.qts.helper.QTSHelp;
 
 import java.util.ArrayList;
@@ -155,7 +155,7 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
                 startActivity(intent8);
                 break;
             case 9:
-                Intent intent9 = new Intent(ActSetting.this,ActFragment.class);
+                Intent intent9 = new Intent(ActSetting.this,ActShowFrm.class);
                 startActivity(intent9);
                 break;
         }

@@ -1,4 +1,4 @@
-package com.company.qts.HEI;
+package com.company.qts.hei;
 
 import retrofit2.Call;
 import retrofit2.http.Field;

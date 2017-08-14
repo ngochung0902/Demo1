@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.company.qts.Adapter.AdapterViewpager;
-import com.company.qts.HEI.ActHEISplash;
+import com.company.qts.adapter.AdapterViewpager;
+import com.company.qts.hei.ActHEISplash;
 
 public class ActStory extends AppCompatActivity {
 

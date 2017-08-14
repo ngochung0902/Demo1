@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.company.qts.Object.ObjectPerson;
+import com.company.qts.object.ObjectPerson;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;

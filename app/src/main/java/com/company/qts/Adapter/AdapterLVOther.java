@@ -1,4 +1,4 @@
-package com.company.qts.Adapter;
+package com.company.qts.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.company.qts.Object.Other;
+import com.company.qts.object.Other;
 import com.company.qts.demo1.R;
 
 import java.util.ArrayList;

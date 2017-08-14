@@ -1,4 +1,4 @@
-package com.company.qts.Utili;
+package com.company.qts.utili;
 
 import android.Manifest;
 import android.annotation.TargetApi;

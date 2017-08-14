@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.company.qts.Object.ObjectPerson;
+import com.company.qts.object.ObjectPerson;
 
 public class ActShowObject extends AppCompatActivity {
     private ImageView img_arrow;

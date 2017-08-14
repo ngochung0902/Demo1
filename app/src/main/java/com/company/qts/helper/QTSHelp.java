@@ -357,6 +357,7 @@ public class QTSHelp {
         }
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
+
     //set and get login yes/no
     public static boolean getIsLogin(Context context) {
         int mode = Activity.MODE_PRIVATE;

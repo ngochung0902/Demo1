@@ -1,4 +1,4 @@
-package com.company.qts.HEI;
+package com.company.qts.hei;
 
 /**
  * Created by MyPC on 08/08/2017.

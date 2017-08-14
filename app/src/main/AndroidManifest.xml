@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -51,15 +51,15 @@
         <activity android:name=".ActContacts" />
         <activity android:name=".ActNewContacts" />
         <activity android:name=".ActViewContacts" />
-        <activity android:name="com.company.qts.APIGET.PostDetailActivity" />
-        <activity android:name="com.company.qts.APIGET.ActMain" />
-        <activity android:name="com.company.qts.APIPOST.LoginActivity" />
-        <activity android:name="com.company.qts.APIPOST.MainAct" />
-        <activity android:name="com.company.qts.HEI.ActHEILogin" />
-        <activity android:name="com.company.qts.HEI.ActHEISplash" />
-        <activity android:name="com.company.qts.HEI.ActHEISpirits" />
-        <activity android:name="com.company.qts.HEI.ActHEIDrink" />
-        <activity android:name="com.company.qts.HEI.ActHEIInfo" />
+        <activity android:name="com.company.qts.apiget.PostDetailActivity" />
+        <activity android:name="com.company.qts.apiget.ActMain" />
+        <activity android:name="com.company.qts.apipost.LoginActivity" />
+        <activity android:name="com.company.qts.apipost.MainAct" />
+        <activity android:name="com.company.qts.hei.ActHEILogin" />
+        <activity android:name="com.company.qts.hei.ActHEISplash" />
+        <activity android:name="com.company.qts.hei.ActHEISpirits" />
+        <activity android:name="com.company.qts.hei.ActHEIDrink" />
+        <activity android:name="com.company.qts.hei.ActHEIInfo" />
         <activity android:name=".ActPicasso" />
         <activity android:name=".ActZoomImage" />
         <activity android:name=".ActSerializable" />
@@ -67,7 +67,10 @@
         <activity android:name=".ActShowArray" />
         <activity android:name="com.company.qts.fragment.Frm1" />
         <activity android:name="com.company.qts.fragment.Frm2" />
-        <activity android:name=".ActFragment"></activity>
+        <activity android:name=".ActFragment" />
+        <activity android:name=".ActShowFrm" />
+        <activity android:name=".ActMainFrm" />
+        <activity android:name=".ActFragmentMain"></activity>
     </application>
 
 </manifest>

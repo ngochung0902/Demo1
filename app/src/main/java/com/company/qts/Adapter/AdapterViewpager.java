@@ -1,4 +1,4 @@
-package com.company.qts.Adapter;
+package com.company.qts.adapter;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.company.qts.Object.Story;
+import com.company.qts.object.Story;
 
 /**
  * Created by MyPC on 01/08/2017.

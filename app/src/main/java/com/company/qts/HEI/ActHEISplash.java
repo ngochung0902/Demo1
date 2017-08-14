@@ -1,4 +1,4 @@
-package com.company.qts.HEI;
+package com.company.qts.hei;
 
 import android.content.Intent;
 import android.os.Bundle;

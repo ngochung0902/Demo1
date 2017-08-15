@@ -70,7 +70,12 @@
         <activity android:name=".ActFragment" />
         <activity android:name=".ActShowFrm" />
         <activity android:name=".ActMainFrm" />
-        <activity android:name=".ActFragmentMain"></activity>
+        <activity android:name=".ActFragmentMain" />
+        <activity
+            android:name=".ActTabHost2"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ActListBlue"></activity>
     </application>
 
 </manifest>

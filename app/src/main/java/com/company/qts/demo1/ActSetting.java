@@ -104,8 +104,13 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
         arrsetting.add((new LineLVSetting("Picasso")));
         arrsetting.add((new LineLVSetting("Serializable")));
         arrsetting.add((new LineLVSetting("Fragment")));
-        arrsetting.add((new LineLVSetting("History")));
+        arrsetting.add((new LineLVSetting("TabHost1")));
+        arrsetting.add((new LineLVSetting("TabHost2")));
+
+        arrsetting.add((new LineLVSetting("My Profile")));
+        arrsetting.add((new LineLVSetting("Background")));
         arrsetting.add((new LineLVSetting("Documents")));
+        arrsetting.add((new LineLVSetting("History")));
     }
 
     private void initUI() {
@@ -158,6 +163,14 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
                 Intent intent9 = new Intent(ActSetting.this,ActShowFrm.class);
                 startActivity(intent9);
                 break;
+            case 10:
+                Intent intent10 = new Intent(ActSetting.this,ActTabHost.class);
+                startActivity(intent10);
+                break;
+            case 11:
+                Intent intent11 = new Intent(ActSetting.this,ActTabHost2.class);
+                startActivity(intent11);
+                break;
         }
     }
 
@@ -168,6 +181,5 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
 //        setIntent.addCategory(Intent.CATEGORY_HOME);
 //        setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //        startActivity(setIntent);
-
     }
 }

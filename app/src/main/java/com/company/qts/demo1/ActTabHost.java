@@ -1,43 +1,58 @@
 package com.company.qts.demo1;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.TabHost;
 
-public class ActTabHost extends AppCompatActivity {
+import com.company.qts.fragment.FrmBlue;
+import com.company.qts.fragment.FrmGreen;
+import com.company.qts.fragment.FrmRed;
 
+public class ActTabHost extends AppCompatActivity {
+    private FragmentTabHost mTabHost;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_tab_host);
+        mTabHost = (FragmentTabHost)findViewById(android.R.id.tabhost);
+        mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
+        mTabHost.setOnTabChangedListener(onTab_Changed);
 
-        TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
+        LayoutInflater inflater = getLayoutInflater();
+        View tab1 = inflater.inflate(R.layout.tab1_indicator,null);
+        View tab2 = inflater.inflate(R.layout.tab2_indicator,null);
+        View tab3 = inflater.inflate(R.layout.tab3_indicator,null);
 
-        //Khởi tạo tab hình ảnh
-        TabHost.TabSpec photospec = tabHost.newTabSpec("HinhAnh");
-        //Thiết lập tên tab hiển thị và icon
-        photospec.setIndicator("Hình ảnh", getResources().getDrawable(R.drawable.img_o));
-        //Thiết lập nôi dung cho tab này là activity HinhAnhActivity.class
-        Intent photosIntent = new Intent(this, Story1.class);
-        photospec.setContent(photosIntent);
+        mTabHost.addTab(mTabHost.newTabSpec("tab1")
+                        .setIndicator(tab1),
+                FrmBlue.class, null);
 
-        //Khởi tạo tab nghe nhạc
-        TabHost.TabSpec songspec = tabHost.newTabSpec("NgheNhac");
-        songspec.setIndicator("Nghe nhạc", getResources().getDrawable(R.drawable.img_t));
-        Intent songsIntent = new Intent(this, Story2.class);
-        songspec.setContent(songsIntent);
+        mTabHost.addTab(mTabHost.newTabSpec("tab2")
+                        .setIndicator(tab2),
+                FrmGreen.class, null);
 
-        //Khởi tạo tab xem phim
-        TabHost.TabSpec videospec = tabHost.newTabSpec("XemPhim");
-        videospec.setIndicator("Xem phim", getResources().getDrawable(R.drawable.img_th));
-        Intent videosIntent = new Intent(this, Story3.class);
-        videospec.setContent(videosIntent);
-
-        //Thêm các TabSpec trên vào TabHost
-        tabHost.addTab(photospec); //Thêm tab hình ảnh
-        tabHost.addTab(songspec); //Thêm tab nghe nhạc
-        tabHost.addTab(videospec); //Thêm tab xem phim
-    }
+        mTabHost.addTab(mTabHost.newTabSpec("tab3")
+                        .setIndicator(tab3),
+                FrmRed.class, null);
 
     }
+    private TabHost.OnTabChangeListener onTab_Changed = new TabHost.OnTabChangeListener() {
+        @Override
+        public void onTabChanged(String tabId) {
+            switch (tabId){
+                case "tab1":
+//                    getSupportActionBar().setTitle("Mau Xanh");
+                    break;
+                case "tab2":
+//                    getSupportActionBar().setTitle("Mau Xanh La Cay");
+                    break;
+                case "tab3":
+//                    getSupportActionBar().setTitle("Mau Do");
+                    break;
+            }
+        }
+    };
+}

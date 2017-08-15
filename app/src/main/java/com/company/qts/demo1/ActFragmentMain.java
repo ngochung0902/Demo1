@@ -7,16 +7,18 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.company.qts.fragment.Frm1;
 import com.company.qts.fragment.Frm2;
 import com.company.qts.fragment.Frm3;
 
-public class ActFragmentMain extends FragmentActivity implements View.OnClickListener, Frm3.OnFragmentManager {
+public class ActFragmentMain extends FragmentActivity implements View.OnClickListener, Frm3.OnFragmentManager, Frm3.showText {
     private Button bt_frm1,bt_frm2,bt_frm3,bt_apply;
     private LinearLayout ln2;
-    private String bien;
+    private String bien,bien1;
+    private TextView tv_showText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,7 @@ public class ActFragmentMain extends FragmentActivity implements View.OnClickLis
         bt_frm3 = (Button) findViewById(R.id.bt_frm3);
         bt_apply = (Button) findViewById(R.id.bt_apply);
         ln2 = (LinearLayout) findViewById(R.id.ln2);
+        tv_showText = (TextView) findViewById(R.id.tv_showtext);
     }
 
     public void callFragment(Fragment fragment) {
@@ -48,7 +51,6 @@ public class ActFragmentMain extends FragmentActivity implements View.OnClickLis
     @Override
     public void onDataSelected(String data) {
         bien = data;
-        Toast.makeText(ActFragmentMain.this, bien, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -99,15 +101,21 @@ public class ActFragmentMain extends FragmentActivity implements View.OnClickLis
                 bt_frm2.setTextColor(Color.GREEN);
                 bt_apply.setBackgroundResource(R.drawable.custom_btfrm_click);
                 bt_apply.setTextColor(Color.WHITE);
-                showText();
+                Toast.makeText(ActFragmentMain.this, bien, Toast.LENGTH_SHORT).show();
+//                Frm3 myFragment1 = new Frm3();
+//                getSupportFragmentManager().findFragmentById(R.id.frm3);
+//                myFragment1.showText();
                 break;
 
         }
     }
 
-    public void showText(){
-        Frm3 frmBottom
-                = (Frm3) this.getSupportFragmentManager().findFragmentById(R.id.frm3);
-        frmBottom.showRs();
+    @Override
+    public void onData(String data) {
+        bien1 = data;
+    }
+
+    public void showText(String a){
+        tv_showText.setText(a);
     }
 }

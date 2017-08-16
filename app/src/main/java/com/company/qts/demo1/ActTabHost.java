@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TabHost;
 
 import com.company.qts.fragment.FrmBlue;
 import com.company.qts.fragment.FrmGreen;
@@ -19,7 +18,6 @@ public class ActTabHost extends AppCompatActivity {
         setContentView(R.layout.activity_act_tab_host);
         mTabHost = (FragmentTabHost)findViewById(android.R.id.tabhost);
         mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
-        mTabHost.setOnTabChangedListener(onTab_Changed);
 
         LayoutInflater inflater = getLayoutInflater();
         View tab1 = inflater.inflate(R.layout.tab1_indicator,null);
@@ -39,20 +37,4 @@ public class ActTabHost extends AppCompatActivity {
                 FrmRed.class, null);
 
     }
-    private TabHost.OnTabChangeListener onTab_Changed = new TabHost.OnTabChangeListener() {
-        @Override
-        public void onTabChanged(String tabId) {
-            switch (tabId){
-                case "tab1":
-//                    getSupportActionBar().setTitle("Mau Xanh");
-                    break;
-                case "tab2":
-//                    getSupportActionBar().setTitle("Mau Xanh La Cay");
-                    break;
-                case "tab3":
-//                    getSupportActionBar().setTitle("Mau Do");
-                    break;
-            }
-        }
-    };
 }

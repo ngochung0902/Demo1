@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.company.qts.demo1.ActListBlue">
+    tools:context="com.company.qts.demo1.ActListBlue"
+    android:weightSum="1">
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,4 +20,5 @@
         android:layout_height="wrap_content"
         android:id="@+id/bt_submit"
         android:text="submit"/>
+
 </LinearLayout>

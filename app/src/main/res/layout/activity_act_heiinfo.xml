@@ -90,7 +90,7 @@
                     android:id="@+id/textView"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:drawableLeft="@drawable/ic_camera"
+                    android:drawableLeft="@drawable/ic_menu_camera"
                     android:layout_gravity="center_horizontal" />
             </LinearLayout>
 

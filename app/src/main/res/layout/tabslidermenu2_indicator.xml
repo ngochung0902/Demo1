@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="#FF303F9F"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_icontabhost2"
+        style="@style/Base.Widget.AppCompat.ActionBar.TabText"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="2dp"
+        android:text=" MOVIES "
+        android:textColor="@color/white"
+        />
+</LinearLayout>

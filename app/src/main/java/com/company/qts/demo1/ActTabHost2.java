@@ -44,8 +44,6 @@ public class ActTabHost2 extends AppCompatActivity implements FrmBlue.position {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-        mViewPager.clearAnimation();
-        mViewPager.clearFocus();
 
     }
 

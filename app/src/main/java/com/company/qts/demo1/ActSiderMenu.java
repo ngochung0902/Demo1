@@ -14,7 +14,7 @@ import android.widget.ListView;
 
 import com.company.qts.helper.QTSHelp;
 
-public class ActSilingMenu extends ActionBarActivity {
+public class ActSiderMenu extends ActionBarActivity {
 
     private ListView lv_silingmenu;
     private DrawerLayout drawer_silingmenu;
@@ -48,11 +48,11 @@ public class ActSilingMenu extends ActionBarActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
                     case 0:
-                        Intent i = new Intent(ActSilingMenu.this,ActSilingMenu2.class);
+                        Intent i = new Intent(ActSiderMenu.this,ActSiderMenu2.class);
                         startActivity(i);
                         break;
                     default:
-                        QTSHelp.showToast(ActSilingMenu.this,position+"");
+                        QTSHelp.showToast(ActSiderMenu.this,position+"");
                 }
             }
         });

@@ -180,11 +180,11 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
                 startActivity(intent12);
                 break;
             case 13:
-                Intent intent13 = new Intent(ActSetting.this,ActSilingMenu.class);
+                Intent intent13 = new Intent(ActSetting.this,ActSiderMenu.class);
                 startActivity(intent13);
                 break;
             case 14:
-//                Intent intent14 = new Intent(ActSetting.this,ActSilingMenu2.class);
+//                Intent intent14 = new Intent(ActSetting.this,ActSiderMenu2.class);
 //                startActivity(intent14);
                 break;
         }

@@ -78,10 +78,10 @@
         <activity android:name=".ActListBlue" />
         <activity android:name=".ActTabHost3" />
         <activity
-            android:name=".ActSilingMenu"
+            android:name=".ActSiderMenu"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity
-            android:name=".ActSilingMenu2"
+            android:name=".ActSiderMenu2"
             android:label="@string/title_activity_act_siling_meu2"
             android:theme="@style/AppTheme" />
         <activity android:name=".ActShowGVGame" />

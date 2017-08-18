@@ -22,6 +22,7 @@ public class ActShowMovies extends AppCompatActivity {
         if (mediaController == null) {
             mediaController = new MediaController(ActShowMovies.this);
 
+
             // Set the videoView that acts as the anchor for the MediaController.
             mediaController.setAnchorView(videoview_movies);
 

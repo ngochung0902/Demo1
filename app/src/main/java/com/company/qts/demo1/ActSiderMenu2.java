@@ -16,7 +16,7 @@ import com.company.qts.fragment.FrmGames;
 import com.company.qts.fragment.FrmMovies;
 import com.company.qts.helper.QTSHelp;
 
-public class ActSilingMenu2 extends AppCompatActivity
+public class ActSiderMenu2 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private FragmentTabHost mTabHost;
@@ -69,19 +69,19 @@ public class ActSilingMenu2 extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            QTSHelp.showToast(ActSilingMenu2.this,"camera");
+            QTSHelp.showToast(ActSiderMenu2.this,"camera");
         } else if (id == R.id.nav_gallery) {
-            QTSHelp.showToast(ActSilingMenu2.this,"gallery");
+            QTSHelp.showToast(ActSiderMenu2.this,"gallery");
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
-            QTSHelp.showToast(ActSilingMenu2.this,"manage");
+            QTSHelp.showToast(ActSiderMenu2.this,"manage");
         } else if (id == R.id.nav_share) {
-            QTSHelp.showToast(ActSilingMenu2.this,"share");
+            QTSHelp.showToast(ActSiderMenu2.this,"share");
         } else if (id == R.id.nav_send) {
-            QTSHelp.showToast(ActSilingMenu2.this,"send");
+            QTSHelp.showToast(ActSiderMenu2.this,"send");
         }else if (id==R.id.ic_appgame){
-            QTSHelp.showToast(ActSilingMenu2.this,"appgame");
+            QTSHelp.showToast(ActSiderMenu2.this,"appgame");
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -10,6 +10,15 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.mysurgery.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <application
         android:allowBackup="true"
@@ -85,7 +94,10 @@
             android:label="@string/title_activity_act_siling_meu2"
             android:theme="@style/AppTheme" />
         <activity android:name=".ActShowGVGame" />
-        <activity android:name=".ActShowMovies"></activity>
+        <activity
+            android:name=".ActShowMovies"
+            android:configChanges="orientation|screenSize|screenLayout|uiMode" />
+        <activity android:name=".ActParallaxMenuSiderTabHost"></activity>
     </application>
 
 </manifest>

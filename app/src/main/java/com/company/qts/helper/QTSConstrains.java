@@ -14,4 +14,5 @@ public class QTSConstrains
 
     public static Bitmap bmAvatar = null;
     public static File pictureFile = null;
+    public static String FONT_SANSPRO_LIGHT = "fonts/ProximaNovaBold.otf";
 }

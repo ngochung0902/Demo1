@@ -1,5 +1,6 @@
 package com.company.qts.demo1;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTabHost;
@@ -43,6 +44,7 @@ public class ActSiderMenu2 extends AppCompatActivity
         LayoutInflater inflater = getLayoutInflater();
         View tab1 = inflater.inflate(R.layout.tabslidermenu1_indicator,null);
         View tab2 = inflater.inflate(R.layout.tabslidermenu2_indicator,null);
+
         mTabHost.addTab(mTabHost.newTabSpec("tab1")
                         .setIndicator(tab1),
                 FrmGames.class, null);
@@ -50,6 +52,25 @@ public class ActSiderMenu2 extends AppCompatActivity
         mTabHost.addTab(mTabHost.newTabSpec("tab2")
                         .setIndicator(tab2),
                 FrmMovies.class, null);
+
+        mTabHost.getTabWidget().getChildAt(0).setBackgroundColor(Color.RED);
+        mTabHost.getTabWidget().getChildAt(0).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTabHost.getTabWidget().getChildAt(0).setBackgroundColor(Color.RED);
+                mTabHost.getTabWidget().getChildAt(1).setBackgroundColor(Color.parseColor("#FF303F9F"));
+                mTabHost.setCurrentTab(0);
+            }
+        });
+
+        mTabHost.getTabWidget().getChildAt(1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTabHost.getTabWidget().getChildAt(1).setBackgroundColor(Color.RED);
+                mTabHost.getTabWidget().getChildAt(0).setBackgroundColor(Color.parseColor("#FF303F9F"));
+                mTabHost.setCurrentTab(1);
+            }
+        });
     }
 
     @Override
@@ -73,7 +94,7 @@ public class ActSiderMenu2 extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             QTSHelp.showToast(ActSiderMenu2.this,"gallery");
         } else if (id == R.id.nav_slideshow) {
-
+            QTSHelp.showToast(ActSiderMenu2.this,"slideshow");
         } else if (id == R.id.nav_manage) {
             QTSHelp.showToast(ActSiderMenu2.this,"manage");
         } else if (id == R.id.nav_share) {

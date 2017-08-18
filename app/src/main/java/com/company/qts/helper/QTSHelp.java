@@ -122,6 +122,12 @@ public class QTSHelp {
         return false;
     }
 
+    public static String getHospital(Context context) {
+        SharedPreferences sharedPre = context.getSharedPreferences(
+                QTSConstrains.SHAREPRE_ID, Context.MODE_PRIVATE);
+        return sharedPre.getString("hospital", "");
+    }
+
 //    // Save image to internal memory
 //    public static boolean saveImageToInternalStorage(Context context, Bitmap image, String name) {
 //        try {

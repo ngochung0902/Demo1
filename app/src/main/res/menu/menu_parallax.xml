@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".ActShowGVGame">
+    <item
+        android:id="@+id/check"
+        android:icon="@drawable/ic_menu_slideshow"
+        android:title="Slideshow" />
+    <item android:title="@string/qn" />
+</menu>

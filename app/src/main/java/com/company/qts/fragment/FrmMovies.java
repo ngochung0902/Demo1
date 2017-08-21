@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.company.qts.demo1.ActShowMovies;
+import com.company.qts.demo1.ActShowMovies1;
 import com.company.qts.demo1.R;
 import com.company.qts.object.MoviesFrm;
 
@@ -49,8 +50,14 @@ public class FrmMovies extends Fragment {
         lv_movies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(getActivity(), ActShowMovies.class);
-                startActivity(i);
+                if (position==0) {
+                    Intent i = new Intent(getActivity(), ActShowMovies.class);
+                    startActivity(i);
+                }
+                if (position==1){
+                    Intent i = new Intent(getActivity(), ActShowMovies1.class);
+                    startActivity(i);
+                }
             }
         });
     }

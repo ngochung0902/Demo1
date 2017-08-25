@@ -146,7 +146,7 @@ public class ActNewUser extends AppCompatActivity {
     }
 
     private void selectGender() {
-        final CharSequence[] itemGender = {"Male", "Female"};
+        final CharSequence[] itemGender =  {"Male", "Female"};
         AlertDialog.Builder builder = new AlertDialog.Builder(ActNewUser.this);
         builder.setTitle("SELECT GENDER");
         builder.setItems(itemGender, new DialogInterface.OnClickListener() {

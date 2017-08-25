@@ -120,7 +120,6 @@ public class ActContacts extends AppCompatActivity implements AdapterView.OnItem
         intent.putExtra("lastname", arr.get(position).lastname);
         intent.putExtra("birthday", arr.get(position).birthday);
         intent.putExtra("number", arr.get(position).number);
-
         startActivity(intent);
     }
 }

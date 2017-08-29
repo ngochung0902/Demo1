@@ -97,8 +97,10 @@
         <activity
             android:name=".ActShowMovies"
             android:configChanges="orientation|screenSize|screenLayout|uiMode" />
-        <activity android:name=".ActParallaxMenuSiderTabHost"></activity>
-        <activity android:name=".ActShowMovies1"></activity>
+        <activity android:name=".ActParallaxMenuSiderTabHost" />
+        <activity android:name=".ActShowMovies1" />
+        <activity android:name=".ActFootball" />
+        <activity android:name=".ActNewFootball"></activity>
     </application>
 
 </manifest>

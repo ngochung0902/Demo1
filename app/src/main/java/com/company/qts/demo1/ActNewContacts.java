@@ -74,7 +74,7 @@ public class ActNewContacts extends AppCompatActivity {
                             }
                             else
                             {
-                                // save note to SQLite
+                                // save note to SQLiteCT
                                 datasource.add(edt_fistname.getText().toString(), edt_lastname.getText().toString(), edt_phone.getText().toString(), tv_birthday.getText().toString());
                                 QTSHelp.showToast(ActNewContacts.this,"Add new contacts successfully");
                                 finish();

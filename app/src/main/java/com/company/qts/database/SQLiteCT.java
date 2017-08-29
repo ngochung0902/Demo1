@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by MyPC on 03/08/2017.
  */
-public class SQLite extends SQLiteOpenHelper {
+public class SQLiteCT extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "contacts.db";
     public static final String TABLE_NAME = "contacts";
@@ -25,7 +25,7 @@ public class SQLite extends SQLiteOpenHelper {
             + COLUMN_LASTNAME + " text not null, "
             + COLUMN_PHONE+" text not null,"
             + COLUMN_BIRTHDAY + " text);";
-    public SQLite(Context context) {
+    public SQLiteCT(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

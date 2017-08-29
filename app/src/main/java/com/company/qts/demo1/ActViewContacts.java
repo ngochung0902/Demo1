@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.company.qts.database.SQLite;
+import com.company.qts.database.SQLiteCT;
 import com.company.qts.database.SQLiteSource;
 
 import java.text.SimpleDateFormat;
@@ -29,7 +29,7 @@ public class ActViewContacts extends AppCompatActivity {
     private DatePickerDialog fromDatePickerDialog;
     private SimpleDateFormat dateFormatter;
     private Button bt_save;
-    private SQLite db;
+    private SQLiteCT db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

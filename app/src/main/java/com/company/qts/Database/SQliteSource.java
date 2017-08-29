@@ -18,12 +18,12 @@ import java.util.ArrayList;
 public class SQLiteSource {
     private SQLiteOpenHelper sqLiteOpenHelper;
     private SQLiteDatabase sqLiteDatabase;
-    private String[] allColumns = {SQLite.COLUMN_ID,SQLite.COLUMN_FISTNAME,SQLite.COLUMN_LASTNAME,SQLite.COLUMN_BIRTHDAY,SQLite.COLUMN_PHONE};
+    private String[] allColumns = {SQLiteCT.COLUMN_ID, SQLiteCT.COLUMN_FISTNAME, SQLiteCT.COLUMN_LASTNAME, SQLiteCT.COLUMN_BIRTHDAY, SQLiteCT.COLUMN_PHONE};
     private Context context;
 
     public SQLiteSource(Context context) {
         this.context = context;
-        sqLiteOpenHelper = new SQLite(context);
+        sqLiteOpenHelper = new SQLiteCT(context);
     }
 
     public void open() throws SQLiteException
@@ -39,24 +39,24 @@ public class SQLiteSource {
     {
 
         ContentValues values = new ContentValues();
-        values.put(SQLite.COLUMN_FISTNAME, fistname);
-        values.put(SQLite.COLUMN_LASTNAME, lastname);
-        values.put(SQLite.COLUMN_PHONE,birthday);
-        values.put(SQLite.COLUMN_BIRTHDAY, phone);
+        values.put(SQLiteCT.COLUMN_FISTNAME, fistname);
+        values.put(SQLiteCT.COLUMN_LASTNAME, lastname);
+        values.put(SQLiteCT.COLUMN_PHONE,birthday);
+        values.put(SQLiteCT.COLUMN_BIRTHDAY, phone);
         // insert
-        sqLiteDatabase.insert(SQLite.TABLE_NAME,null,values);
+        sqLiteDatabase.insert(SQLiteCT.TABLE_NAME,null,values);
     }
     // delete note
     public void deleteNote(int id)
     {
-        sqLiteDatabase.delete(SQLite.TABLE_NAME, SQLite.COLUMN_ID + "=" + id,null);
+        sqLiteDatabase.delete(SQLiteCT.TABLE_NAME, SQLiteCT.COLUMN_ID + "=" + id,null);
         Toast.makeText(this.context,"delete note success",Toast.LENGTH_LONG).show();
     }
 
 //    public void updatephone(int id, String new_phone){
 //        ContentValues values = new ContentValues();
-//        values.put(SQLite.COLUMN_PHONE, new_phone);
-//        int ret =sqLiteDatabase.update(SQLite.TABLE_NAME,values,SQLite.COLUMN_ID + "=" + id, new String[]{phone});
+//        values.put(SQLiteCT.COLUMN_PHONE, new_phone);
+//        int ret =sqLiteDatabase.update(SQLiteCT.TABLE_NAME,values,SQLiteCT.COLUMN_ID + "=" + id, new String[]{phone});
 //        if (ret==0){
 //            Log.i("update data","update that bai");
 //        }

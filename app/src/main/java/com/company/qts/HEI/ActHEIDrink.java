@@ -54,7 +54,7 @@ public class ActHEIDrink extends AppCompatActivity {
         mAPIService.postHEIDrink("f92e4c43791449f2a90646bd5d09bd60",idspirits).enqueue(new Callback<PostHEIDrink>() {
             @Override
             public void onResponse(Call<PostHEIDrink> call, Response<PostHEIDrink> response) {
-                adapter = new AdapterDrink(ActHEIDrink.this,response.body().getDrinks());
+                adapter = new AdapterDrink(ActHEIDrink.this, (ArrayList<Drink>) response.body().getDrinks());
                 lv_drink.setAdapter(adapter);
                 arrlist = response.body().getDrinks();
             }
@@ -142,11 +142,11 @@ public class ActHEIDrink extends AppCompatActivity {
             return temp;
         }
 
-        @Override
-        protected void onPostExecute(List<Drink> result) {
-            // TODO Auto-generated method stub
-            adapter.setData(result);
-            super.onPostExecute(result);
-        }
+//        @Override
+//        protected void onPostExecute(ArrayList<Drink> result) {
+//            // TODO Auto-generated method stub
+//            adapter.setData(result);
+//            super.onPostExecute(result);
+//        }
     }
 }

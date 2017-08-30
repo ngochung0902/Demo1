@@ -110,8 +110,8 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
         arrsetting.add((new LineLVSetting("SliderMenu")));
         arrsetting.add((new LineLVSetting("ParallaxMenuSiderTabHost")));
         arrsetting.add((new LineLVSetting("Football")));
+        arrsetting.add((new LineLVSetting("Load more API")));
 
-        arrsetting.add((new LineLVSetting("Documents")));
         arrsetting.add((new LineLVSetting("History")));
         arrsetting.add((new LineLVSetting("Documents")));
         arrsetting.add((new LineLVSetting("History")));
@@ -190,6 +190,10 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
             case 15:
                 Intent intent15 = new Intent(ActSetting.this,ActFootball.class);
                 startActivity(intent15);
+                break;
+            case 16:
+                Intent intent16 = new Intent(ActSetting.this,ActLoadMoreAPI.class);
+                startActivity(intent16);
                 break;
         }
     }

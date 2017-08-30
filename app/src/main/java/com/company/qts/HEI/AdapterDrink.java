@@ -33,6 +33,11 @@ public class AdapterDrink extends BaseAdapter implements Filterable {
         this.postList2 = postList;
     }
 
+    public void AddListItemAdapter(List<Drink> itemplus){
+        postList.addAll(itemplus);
+        this.notifyDataSetChanged();
+    }
+
     @Override
     public int getCount() {
         return postList.size();

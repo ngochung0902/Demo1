@@ -29,10 +29,14 @@ public class ActFootball extends AppCompatActivity {
     private boolean isLoading = false;
     private AdapterLVFB adapter;
     mHandler mHandler;
+    int a=8,b,i=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_football);
+        i=1;
+        b=8;
+
         img_back = (ImageView) findViewById(R.id.img_back);
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         load_more_lv = inflater.inflate(R.layout.load_more_lv,null);
@@ -47,6 +51,8 @@ public class ActFootball extends AppCompatActivity {
         img_newuser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                i=1;
+                b=8;
                 Intent i = new Intent(ActFootball.this,ActNewFootball.class);
                 startActivity(i);
             }
@@ -54,6 +60,8 @@ public class ActFootball extends AppCompatActivity {
         lv_fb = (ListView) findViewById(R.id.lv_fb);
         noitem = (TextView) findViewById(R.id.noitem);
 
+        datasource = new SQLiteSourceFB(ActFootball.this);
+        datasource.open();
         lv_fb.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -62,17 +70,55 @@ public class ActFootball extends AppCompatActivity {
 
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                if(view.getLastVisiblePosition() == totalItemCount-1 && isLoading == false )
-                {
-                    isLoading = true;
-                    Thread thread = new ThreaData();
-                    thread.start();
+//                if (lv_fb.getCount()>=arr2.size())
+//                {
+//                    datasource.getAllContacts();
+//                }
+//                else
+//                {
+                    if(view.getLastVisiblePosition() == totalItemCount-1 && isLoading == false && lv_fb.getCount()>=8 && lv_fb.getCount()<datasource.getAllContacts().size() )
+                    {
+                        i++;
+                        isLoading = true;
+                        Thread thread = new ThreaData();
+                        thread.start();
+                    }
                 }
-            }
+            /*}*/
         });
 
-        datasource = new SQLiteSourceFB(ActFootball.this);
-        datasource.open();
+
+
+//        datasource.add("20170829171527.png","1","1","5");
+//        datasource.add("20170829171527.png","2","2","5");
+//        datasource.add("20170829171527.png","3","3","5");
+//        datasource.add("20170829171527.png","4","4","5");
+//        datasource.add("20170829171527.png","5","5","5");
+//        datasource.add("20170829171527.png","6","6","5");
+//        datasource.add("20170829171527.png","7","7","5");
+//        datasource.add("20170829171527.png","8","8","5");
+//
+//        datasource.add("20170829171527.png","9","9","5");
+//        datasource.add("20170829171527.png","10","10","5");
+//        datasource.add("20170829171527.png","11","11","5");
+//        datasource.add("20170829171527.png","12","12","5");
+//        datasource.add("20170829171527.png","13","13","5");
+//        datasource.add("20170829171527.png","14","14","5");
+//        datasource.add("20170829171527.png","15","15","5");
+//        datasource.add("20170829171527.png","16","16","5");
+//
+//        datasource.add("20170829171527.png","17","17","5");
+//        datasource.add("20170829171527.png","18","18","5");
+//        datasource.add("20170829171527.png","19","19","5");
+//        datasource.add("20170829171527.png","20","20","5");
+//        datasource.add("20170829171527.png","21","21","5");
+//        datasource.add("20170829171527.png","22","22","5");
+//        datasource.add("20170829171527.png","23","23","5");
+//        datasource.add("20170829171527.png","24","24","5");
+//
+//        datasource.add("20170829171527.png","25","25","5");
+//        datasource.add("20170829171527.png","26","26","5");
+//        datasource.add("20170829171527.png","27","27","5");
     }
 
     private Handler handler = new Handler()
@@ -87,7 +133,7 @@ public class ActFootball extends AppCompatActivity {
                 noitem.setVisibility(View.GONE);
                 lv_fb.setVisibility(View.VISIBLE);
                 // view all note to listview
-                AdapterLVFB adapter = new AdapterLVFB(ActFootball.this,arr);
+                adapter = new AdapterLVFB(ActFootball.this,arr);
                 lv_fb.setAdapter(adapter);
 
             }else {
@@ -105,8 +151,6 @@ public class ActFootball extends AppCompatActivity {
             public void run() {
                 // read all notes form DB
                 arr = datasource.getloadmore(8,0);
-
-//                arr = datasource.getAllContacts();
                 handler.sendEmptyMessage(0);
             }
         }).start();
@@ -145,24 +189,17 @@ public class ActFootball extends AppCompatActivity {
         @Override
         public void run() {
             mHandler.sendEmptyMessage(0);
-//            arr.addAll(datasource.getloadmore(8,0));
-//            QTSHelp.showToast(ActFootball.this,"load more");
-            Log.e("error","loafmore");
+            ArrayList<Football> list = datasource.getloadmore(a,b);
             try {
                 Thread.sleep(3000);
+                b = 8 * i -1;
+                a = 8;
+                Log.e("dataa BBB",b+"");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            Message message = mHandler.obtainMessage(1,arr);
+            Message message = mHandler.obtainMessage(1,list);
             mHandler.sendMessage(message);
         }
     }
-
-//    private ArrayList<Football> getMoreData() {
-//        ArrayList<Football> list = new ArrayList<>();
-//        datasource.add("","A","A","5");
-//        datasource.add("","B","B","5");
-//        datasource.add("","C","C","5");
-//        return list;
-//    }
 }

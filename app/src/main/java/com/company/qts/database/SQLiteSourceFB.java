@@ -54,6 +54,14 @@ public class SQLiteSourceFB {
             Toast.makeText(this.context,"delete note success",Toast.LENGTH_LONG).show();
         }
 
+        public int count()
+        {
+            String selectQuery = "SELECT COUNT (*) FROM " + SQLiteFB.TABLE_NAME;
+
+            return a;
+        }
+
+
 //        public void show ()
 //        {
 //            String selectQuery = "SELECT  * FROM " + SQLiteFB.TABLE_NAME + "limit '2' offset '3'" ;

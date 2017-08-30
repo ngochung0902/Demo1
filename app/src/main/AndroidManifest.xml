@@ -100,7 +100,8 @@
         <activity android:name=".ActParallaxMenuSiderTabHost" />
         <activity android:name=".ActShowMovies1" />
         <activity android:name=".ActFootball" />
-        <activity android:name=".ActNewFootball"></activity>
+        <activity android:name=".ActNewFootball" />
+        <activity android:name=".ActLoadMoreAPI"></activity>
     </application>
 
 </manifest>

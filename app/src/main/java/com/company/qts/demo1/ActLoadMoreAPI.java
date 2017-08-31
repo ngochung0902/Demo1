@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.company.qts.hei.APIService;
@@ -32,6 +33,7 @@ public class ActLoadMoreAPI extends AppCompatActivity {
     private View load_more_lv;
     private String idspirits;
     private boolean isLoading = false;
+    private ImageView img_back;
     mHandler mHandler;
     int page=12;
     @Override
@@ -39,7 +41,13 @@ public class ActLoadMoreAPI extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_load_more_api);
         lv_hei = (ListView) findViewById(R.id.lv_hei);
-
+        img_back = (ImageView) findViewById(R.id.img_back);
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         load_more_lv = inflater.inflate(R.layout.load_more_lv,null);
         mHandler = new mHandler();
@@ -112,7 +120,6 @@ public class ActLoadMoreAPI extends AppCompatActivity {
                     break;
                 case 1:
                     lv_hei.removeFooterView(load_more_lv);
-                    getData(13);
                     adapter.AddListItemAdapter((List<Drink>)msg.obj);
                     isLoading = false;
                     break;
@@ -130,7 +137,7 @@ public class ActLoadMoreAPI extends AppCompatActivity {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            Message message = mHandler.obtainMessage(1);
+            Message message = mHandler.obtainMessage(1,arrlist);
             mHandler.sendMessage(message);
         }
     }

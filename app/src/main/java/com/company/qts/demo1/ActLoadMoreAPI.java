@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AbsListView;
@@ -30,6 +29,7 @@ public class ActLoadMoreAPI extends AppCompatActivity {
     private APIService mAPIService;
     private List<Drink> arrlist;
     private List<Drink> arrlist2;
+    List<Drink> arr;
     private View load_more_lv;
     private String idspirits;
     private boolean isLoading = false;
@@ -78,7 +78,7 @@ public class ActLoadMoreAPI extends AppCompatActivity {
 
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                if (view.getLastVisiblePosition() == totalItemCount-1 && isLoading == false)
+                if (view.getLastVisiblePosition() == totalItemCount-1 && isLoading == false && lv_hei.getCount()<=60)
                 {
                     isLoading = true;
                     Thread thread = new ThreaData();
@@ -86,28 +86,6 @@ public class ActLoadMoreAPI extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    public List<Drink> getData(int page)
-    {
-        idspirits = String.valueOf(page);
-        mAPIService = APIUtils.getAPIService();
-        mAPIService.postHEIDrink("f92e4c43791449f2a90646bd5d09bd60",idspirits).enqueue(new Callback<PostHEIDrink>() {
-            @Override
-            public void onResponse(Call<PostHEIDrink> call, Response<PostHEIDrink> response) {
-                if (response !=null) {
-                    arrlist2 = response.body().getDrinks();
-                    Log.e("array2",arrlist2.get(0).getId()+"\n"+arrlist2.get(0).getName()+"\n"+arrlist2.get(0).getMixName()+"\n"+arrlist2.get(0).getImage());
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<PostHEIDrink> call, Throwable t) {
-                QTSHelp.ShowpopupMessage(ActLoadMoreAPI.this,"error");
-            }
-        });
-        return arrlist2;
     }
 
     public class mHandler extends Handler {
@@ -119,9 +97,9 @@ public class ActLoadMoreAPI extends AppCompatActivity {
                     lv_hei.addFooterView(load_more_lv);
                     break;
                 case 1:
-                    lv_hei.removeFooterView(load_more_lv);
-                    adapter.AddListItemAdapter((List<Drink>)msg.obj);
-                    isLoading = false;
+                        lv_hei.removeFooterView(load_more_lv);
+                        arrlist.addAll(arrlist2);
+                        isLoading = false;
                     break;
             }
         }
@@ -132,13 +110,38 @@ public class ActLoadMoreAPI extends AppCompatActivity {
         public void run() {
             super.run();
             mHandler.sendEmptyMessage(0);
+            getData(++page);
+            arr = arrlist2;
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            Message message = mHandler.obtainMessage(1,arrlist);
-            mHandler.sendMessage(message);
+                Message message = mHandler.obtainMessage(1,arrlist2);
+                mHandler.sendMessage(message);
+
+
         }
+    }
+
+    public List<Drink> getData(int page)
+    {
+        idspirits = String.valueOf(page);
+        mAPIService = APIUtils.getAPIService();
+        mAPIService.postHEIDrink("f92e4c43791449f2a90646bd5d09bd60",idspirits).enqueue(new Callback<PostHEIDrink>() {
+            @Override
+            public void onResponse(Call<PostHEIDrink> call, Response<PostHEIDrink> response) {
+                if (response !=null) {
+                    arrlist2 = response.body().getDrinks();
+                    //Log.e("array2",arrlist2.get(0).getId()+"\n"+arrlist2.get(0).getName()+"\n"+arrlist2.get(0).getMixName()+"\n"+arrlist2.get(0).getImage());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PostHEIDrink> call, Throwable t) {
+                QTSHelp.ShowpopupMessage(ActLoadMoreAPI.this,"error");
+            }
+        });
+        return arrlist2;
     }
 }

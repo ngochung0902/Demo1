@@ -34,6 +34,7 @@ public class AdapterDrink extends BaseAdapter implements Filterable {
     }
 
     public void AddListItemAdapter(List<Drink> itemplus){
+//        Log.e("itemplus",itemplus.get(1).getId());
         postList.addAll(itemplus);
         this.notifyDataSetChanged();
     }

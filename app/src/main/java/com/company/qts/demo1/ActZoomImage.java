@@ -17,7 +17,7 @@ public class ActZoomImage extends AppCompatActivity {
         setContentView(R.layout.activity_act_zoom_image);
         initUI();
 
-        mThumbIds=new Integer[]{R.drawable.h, R.drawable.img_f, R.drawable.a, R.drawable.error, R.mipmap.ic_launcher, R.drawable.h, R.drawable.flowerpica,R.drawable.h,R.drawable.flowerpicasso};
+        mThumbIds=new Integer[]{R.drawable.h, R.drawable.img_f, R.drawable.h, R.drawable.error, R.mipmap.ic_launcher, R.drawable.h, R.drawable.flowerpica,R.drawable.h,R.drawable.flowerpicasso};
 
         img_arrow.setOnClickListener(new View.OnClickListener() {
             @Override

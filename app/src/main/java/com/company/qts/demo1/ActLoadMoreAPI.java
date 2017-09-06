@@ -58,6 +58,7 @@ public class ActLoadMoreAPI extends AppCompatActivity {
             @Override
             public void onResponse(Call<PostHEIDrink> call, Response<PostHEIDrink> response) {
                 if (response !=null) {
+                    QTSHelp.showToast(ActLoadMoreAPI.this,"onreponse");
                     adapter = new AdapterDrink(ActLoadMoreAPI.this, response.body().getDrinks());
                     lv_hei.setAdapter(adapter);
                     arrlist = response.body().getDrinks();
@@ -107,7 +108,8 @@ public class ActLoadMoreAPI extends AppCompatActivity {
 
     public class ThreaData extends Thread{
         @Override
-        public void run() {
+        public void run()
+        {
             super.run();
             mHandler.sendEmptyMessage(0);
             getData(++page);
@@ -119,8 +121,6 @@ public class ActLoadMoreAPI extends AppCompatActivity {
             }
                 Message message = mHandler.obtainMessage(1,arrlist2);
                 mHandler.sendMessage(message);
-
-
         }
     }
 

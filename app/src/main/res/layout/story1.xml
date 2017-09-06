@@ -26,11 +26,4 @@
         android:textSize="20dp"
         android:text="Hoa Huong Duong"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginLeft="20dp"
-        android:textSize="20dp"
-        android:text="@string/name_hung"/>
 </LinearLayout>

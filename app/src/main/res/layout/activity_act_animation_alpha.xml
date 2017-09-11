@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.company.qts.demo1.ActAnimationAlpha">
+    <ImageView
+        android:id="@+id/img_amination1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/flowerpica"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+    <ImageView
+        android:id="@+id/img_amination2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/chuong"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/img_amination1"
+        android:layout_marginStart="38dp" />
+
+    <ImageView
+        android:id="@+id/img_amination3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_below="@+id/img_amination1"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="63dp" />
+
+    <ImageView
+        android:id="@+id/img_amination4"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

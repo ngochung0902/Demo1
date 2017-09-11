@@ -114,6 +114,7 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
         arrsetting.add((new LineLVSetting("Relative Layout")));
         arrsetting.add((new LineLVSetting("Alarm Clock")));
         arrsetting.add((new LineLVSetting("Notifications")));
+        arrsetting.add((new LineLVSetting("Animation")));
     }
 
     private void initUI() {
@@ -205,6 +206,10 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
             case 19:
                 Intent intent19 = new Intent(ActSetting.this,ActNotifications.class);
                 startActivity(intent19);
+                break;
+            case 20:
+                Intent intent20 = new Intent(ActSetting.this,ActAnimation1.class);
+                startActivity(intent20);
                 break;
         }
     }

@@ -111,9 +111,13 @@
 
         <receiver android:name="com.company.qts.helper.AlarmReceiver" />
 
-        <activity
-            android:name=".ActNotifications">
-        </activity>
+        <activity android:name=".ActNotifications" />
+        <activity android:name=".ActAnimation1" />
+        <activity android:name=".ActAnimation2" />
+        <activity android:name=".ActAnimationAlpha" />
+        <activity android:name=".ActAnimationTranslate" />
+        <activity android:name=".ActAnimationListView" />
+        <activity android:name=".ActAnimationMenu"></activity>
     </application>
 
 </manifest>

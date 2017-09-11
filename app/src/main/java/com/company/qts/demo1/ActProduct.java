@@ -9,22 +9,61 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.company.qts.adapter.AdapterGallery;
+import com.company.qts.helper.QTSHelp;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ActProduct extends AppCompatActivity {
+public class ActProduct extends AppCompatActivity{
     ImageView img_arrow;
-    RecyclerView rcv_products;
     MyRecyclerViewAdapter adapter;
+    AdapterGallery adapterGallery;
+    int [] images = {R.drawable.img_o,R.drawable.img_t,R.drawable.img_th,R.drawable.img_f,R.drawable.img_fa,R.drawable.img_o,
+            R.drawable.img_o,R.drawable.img_t,R.drawable.img_th,R.drawable.img_f,R.drawable.img_fa,R.drawable.img_o};
+    Gallery gallery;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_product);
         img_arrow = (ImageView) findViewById(R.id.img_arrow);
+        gallery = (Gallery) findViewById(R.id.gallery);
+        adapterGallery = new AdapterGallery(getApplicationContext(), images); // initialize the adapter
+        gallery.setAdapter(adapterGallery); // set the adapter
+        gallery.setSpacing(10);
+
+//        DisplayMetrics metrics = new DisplayMetrics();
+//        ctx.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+//
+//        Gallery gallery = (Gallery) ctx.findViewById(R.id.gallery);
+//
+//        ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) gallery.getLayoutParams();
+//        mlp.setMargins(-(metrics.widthPixels/2),
+//                mlp.topMargin,
+//                mlp.rightMargin,
+//                mlp.bottomMargin);
+//        gallery.setOnTouchListener(new View.OnTouchListener() {
+//
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//
+//                return true;
+//            }
+//        });
+        gallery.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                QTSHelp.showToast(ActProduct.this,"position"+position);
+            }
+        });
+        gallery.setFadingEdgeLength(0);
+        gallery.setSelection(1);
         img_arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,8 +76,18 @@ public class ActProduct extends AppCompatActivity {
         viewColoers.add(Color.MAGENTA);
         viewColoers.add(Color.RED);
         viewColoers.add(Color.BLACK);
+        viewColoers.add(Color.BLUE);
+        viewColoers.add(Color.YELLOW);
+        viewColoers.add(Color.MAGENTA);
+        viewColoers.add(Color.RED);
+        viewColoers.add(Color.BLACK);
 
         ArrayList<String> animalNames = new ArrayList<>();
+        animalNames.add("Horse");
+        animalNames.add("Cow");
+        animalNames.add("Camel");
+        animalNames.add("Sheep");
+        animalNames.add("Goat");
         animalNames.add("Horse");
         animalNames.add("Cow");
         animalNames.add("Camel");
@@ -53,6 +102,7 @@ public class ActProduct extends AppCompatActivity {
         adapter = new MyRecyclerViewAdapter(this, viewColoers, animalNames);
         recyclerView.setAdapter(adapter);
     }
+
     public static class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
         private List<Integer> mViewColors = Collections.emptyList();
@@ -91,7 +141,7 @@ public class ActProduct extends AppCompatActivity {
         }
 
         // stores and recycles views as they are scrolled off screen
-        public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        public class ViewHolder extends RecyclerView.ViewHolder {
             public View myView;
             public TextView myTextView;
 
@@ -99,13 +149,13 @@ public class ActProduct extends AppCompatActivity {
                 super(itemView);
                 myView = itemView.findViewById(R.id.colorView);
                 myTextView = (TextView) itemView.findViewById(R.id.tvAnimalName);
-                itemView.setOnClickListener(this);
+//                itemView.setOnClickListener(this);
             }
 
-            @Override
-            public void onClick(View view) {
-                if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
-            }
+//            @Override
+//            public void onClick(View view) {
+//                if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+//            }
         }
 
         // convenience method for getting data at click position

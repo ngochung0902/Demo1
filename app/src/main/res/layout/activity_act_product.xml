@@ -52,13 +52,24 @@
 
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
+                android:background="@color/green1"
                 android:layout_height="wrap_content"
                 android:id="@+id/rcv_products"
-                android:numColumns="4"
                 android:orientation="horizontal"
                 android:layout_below="@+id/imageView8"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="39dp">
             </android.support.v7.widget.RecyclerView>
+
+            <Gallery
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gallery"
+                android:layout_below="@+id/rcv_products"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="42dp"
+                android:background="@color/green1">
+            </Gallery>
     </RelativeLayout>
 </RelativeLayout>

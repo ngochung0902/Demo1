@@ -10,6 +10,8 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.company.qts.demo1.R;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main);
 
         // inital data
         initialData();
@@ -90,16 +92,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
     private void initialData()
     {
-        arr.add(new LessionModel(1,"About"));
-        arr.add(new LessionModel(2, "Asking questions 1"));
-        arr.add(new LessionModel(3, "Asking questions 2"));
-        arr.add(new LessionModel(4, "Can have and could have"));
-        arr.add(new LessionModel(5, "Can"));
-        arr.add(new LessionModel(6, "Could"));
-        arr.add(new LessionModel(7, "For"));
-        arr.add(new LessionModel(8, "For 2"));
-        arr.add(new LessionModel(9, "Going to or will"));
-        arr.add(new LessionModel(10, "Had better"));
+        arr.add(new LessionModel(0,R.drawable.flowerpica,"About"));
+        arr.add(new LessionModel(1,R.drawable.flowerpica, "Asking questions 1"));
+        arr.add(new LessionModel(2,R.drawable.img_f, "Asking questions 2"));
+        arr.add(new LessionModel(3,R.drawable.img_o, "Can have and could have"));
+        arr.add(new LessionModel(4,R.drawable.img_o,"Can"));
+        arr.add(new LessionModel(5,R.drawable.ic_english, "Could"));
+        arr.add(new LessionModel(6,R.drawable.ic_english,"For"));
+        arr.add(new LessionModel(7,R.drawable.ic_english,"For 2"));
+        arr.add(new LessionModel(8,R.drawable.ic_english,"Going to or will"));
+        arr.add(new LessionModel(9,R.drawable.ic_english,"Had better"));
     }
 
     @Override

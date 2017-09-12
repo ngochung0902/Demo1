@@ -117,7 +117,16 @@
         <activity android:name=".ActAnimationAlpha" />
         <activity android:name=".ActAnimationTranslate" />
         <activity android:name=".ActAnimationListView" />
-        <activity android:name=".ActAnimationMenu"></activity>
+        <activity android:name=".ActAnimationMenu" />
+        <activity android:name=".ActViewFlipper" />
+        <activity android:name="com.company.qts.clonePalfed.activity.ActHome1" />
+        <activity android:name="com.company.qts.clonePalfed.activity.ActNoInternet" />
+        <activity android:name="com.company.qts.clonePalfed.activity.ActTest" />
+        <activity android:name=".ActFlash" />
+        <activity android:name="com.company.qts.englishgrammar.activity.MainEnglish" />
+        <activity android:name="com.company.qts.englishgrammar.activity.LessionDetail" />
+        <activity android:name="com.company.qts.englishgrammar.activity.MainActivity" />
+        <activity android:name="com.company.qts.englishgrammar.activity.ActDetailEnglish"></activity>LessionDetail
     </application>
 
 </manifest>

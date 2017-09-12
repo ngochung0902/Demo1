@@ -11,12 +11,14 @@ import android.widget.LinearLayout;
 import android.widget.Switch;
 
 import com.company.qts.demo1.R;
+import com.company.qts.helper.CircularImageView;
 import com.company.qts.helper.QTSHelp;
 
 public class ActHome1 extends AppCompatActivity {
-    private ImageView swpalfed;
+    private ImageView swpalfed,ic_notification,ic_users,ic_calendar,ic_home,ic_logout;
     private Switch sw_logo;
     private LinearLayout ln_sw1,ln_sw2;
+    private CircularImageView ic_avatar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +28,7 @@ public class ActHome1 extends AppCompatActivity {
             startActivity(new Intent(ActHome1.this,ActNoInternet.class));
         }
         initUI();
+        ic_avatar.setImageResource(R.drawable.h);
         QTSHelp.setLayoutView(swpalfed,QTSHelp.GetWidthDevice(this)/4,QTSHelp.GetWidthDevice(this)/4*143/190);
         QTSHelp.setLayoutView(sw_logo,QTSHelp.GetWidthDevice(this)/4,QTSHelp.GetWidthDevice(this)/4*143/190);
         sw_logo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -64,6 +67,12 @@ public class ActHome1 extends AppCompatActivity {
         sw_logo = (Switch) findViewById(R.id.sw_logo);
         ln_sw1 = (LinearLayout) findViewById(R.id.ln_sw1);
         ln_sw2 = (LinearLayout) findViewById(R.id.ln_sw2);
+        ic_notification = (ImageView) findViewById(R.id.ic_notification);
+        ic_users = (ImageView) findViewById(R.id.ic_users);
+        ic_calendar = (ImageView) findViewById(R.id.ic_calendar);
+        ic_home = (ImageView) findViewById(R.id.ic_home);
+        ic_logout = (ImageView) findViewById(R.id.ic_logout);
+        ic_avatar = (CircularImageView) findViewById(R.id.ic_avatar);
         getWidthHeight();
     }
 

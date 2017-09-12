@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
+import com.company.qts.demo1.R;
+
 import java.util.ArrayList;
 
 /**

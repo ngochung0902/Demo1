@@ -13,7 +13,7 @@ import com.company.qts.demo1.R;
 import java.util.ArrayList;
 
 /**
- * Created by MyPC on 12/09/2017.
+ * Created by tuanlq on 7/26/2016.
  */
 public class LessionAdapter extends BaseAdapter {
     private ArrayList<LessionModel> arr;
@@ -45,9 +45,9 @@ public class LessionAdapter extends BaseAdapter {
         View rowView = inflater.inflate(R.layout.lession_item, parent, false);
 
         TextView lblName = (TextView) rowView.findViewById(R.id.lbl_lession);
+        ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView);
+        imageView.setImageResource(this.arr.get(position).img);
         lblName.setText(this.arr.get(position).lessionName);
         return rowView;
     }
-
-
 }

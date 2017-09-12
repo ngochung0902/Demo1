@@ -1,7 +1,10 @@
+
 package com.company.qts.clonePalfed.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.company.qts.demo1.R;
 
 public class ActTest extends AppCompatActivity {
 

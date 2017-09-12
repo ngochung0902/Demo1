@@ -68,7 +68,7 @@ public class ActHome extends AppCompatActivity {
 
         //--------------------------------------------------------------------
 //        AsyncTaskDownload asyncTaskDownload = new AsyncTaskDownload();
-//        asyncTaskDownload.SetLister(ActHome.this);
+//        asyncTaskDownload.SetLister(ActHome1.this);
 //        asyncTaskDownload.execute("https://api.coinsecure.in/v1/login");
 //        //https://api.myjson.com/bins/4z4r4
         //---------------------------------------------------------------------
@@ -125,7 +125,7 @@ public class ActHome extends AppCompatActivity {
         bt_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(ActHome.this, ActMain.class);
+//                Intent intent = new Intent(ActHome1.this, ActMain.class);
 //                startActivity(intent);
             }
         });

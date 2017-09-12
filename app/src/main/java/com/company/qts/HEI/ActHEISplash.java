@@ -21,7 +21,7 @@ public class ActHEISplash extends AppCompatActivity {
                         // Wait given period of time or exit on touch
 //                        if(QTSHelp.getIsLogin(ActHEISplash.this)) {
 //                            wait(QTSConstrains.Splash_Time);
-//                            Intent intent = new Intent(ActHEISplash.this, ActHome.class);
+//                            Intent intent = new Intent(ActHEISplash.this, ActHome1.class);
 //                            startActivity(intent);
 //                            finish();
 //                        }

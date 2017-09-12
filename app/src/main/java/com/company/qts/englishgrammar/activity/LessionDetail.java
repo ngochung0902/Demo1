@@ -1,8 +1,11 @@
 package com.company.qts.englishgrammar.activity;
 
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.util.Log;
+
+import com.company.qts.demo1.R;
 
 public class LessionDetail extends AppCompatActivity {
     private ViewPager viewPager;
@@ -20,6 +23,7 @@ public class LessionDetail extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         // current view
         int id = getIntent().getExtras().getInt("lession_id");
+        Log.e("getintent",id+"");
         viewPager.setCurrentItem(id);
     }
 }

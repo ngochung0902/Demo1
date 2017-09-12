@@ -14,8 +14,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.company.qts.adapter.AdapterLVSetting;
-import com.company.qts.object.LineLVSetting;
+import com.company.qts.clonePalfed.activity.ActHome1;
+import com.company.qts.englishgrammar.activity.MainActivity;
 import com.company.qts.helper.QTSHelp;
+import com.company.qts.object.LineLVSetting;
 
 import java.util.ArrayList;
 
@@ -115,6 +117,10 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
         arrsetting.add((new LineLVSetting("Alarm Clock")));
         arrsetting.add((new LineLVSetting("Notifications")));
         arrsetting.add((new LineLVSetting("Animation")));
+        arrsetting.add((new LineLVSetting("View Flipper")));
+        arrsetting.add((new LineLVSetting("Clone Palfed")));
+        arrsetting.add((new LineLVSetting("Đèn Flash")));
+        arrsetting.add((new LineLVSetting("Study English Grammar")));
     }
 
     private void initUI() {
@@ -210,6 +216,22 @@ public class ActSetting extends AppCompatActivity implements AdapterView.OnItemC
             case 20:
                 Intent intent20 = new Intent(ActSetting.this,ActAnimation1.class);
                 startActivity(intent20);
+                break;
+            case 21:
+                Intent intent21 = new Intent(ActSetting.this,ActViewFlipper.class);
+                startActivity(intent21);
+                break;
+            case 22:
+                Intent intent22 = new Intent(ActSetting.this, ActHome1.class);
+                startActivity(intent22);
+                break;
+            case 23:
+                Intent intent23 = new Intent(ActSetting.this, ActFlash.class);
+                startActivity(intent23);
+                break;
+            case 24:
+                Intent intent24 = new Intent(ActSetting.this, MainActivity.class);
+                startActivity(intent24);
                 break;
         }
     }
